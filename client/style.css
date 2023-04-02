@@ -1,0 +1,99 @@
+@media screen and (max-width: 525px) {
+  body {
+    background-color: #000000;
+    color: #0FB600;
+    font-family: VT323;
+    letter-spacing: 1px;
+    margin: 0;
+  }
+  section {
+    width: 90vw;
+  }
+  h1 {
+    letter-spacing: 2px;
+  }
+  article, h1 {
+    border: 1px dashed #0FB600;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1%;
+    margin: 5%;
+    margin-left: 22vw;
+  }
+  .yellow {
+    color: #DCEE07;
+  }
+  .red {
+    color: #B60B00;
+  }
+  .white {
+    color: #FFFFFF;
+  }
+  footer {
+    width: 90vw;
+    margin-left: 8vw;
+    padding-left: 8vw;
+  }
+  .navslide {
+    height: 100vh;
+    width: 90vw;
+  }
+  .clickBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 5vw;
+    left: 10px;
+    margin: 0px;
+  }
+  .left {
+    border-right: 2px solid #0FB600;
+  }
+  .right {
+    border-left: 2px solid #0FB600;
+  }
+  .navslideCheckbox {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #0FB600;
+  }
+  #signIn, #signUp {
+    position: relative;
+    margin: 33vw;
+  }
+  #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn {
+    border: 1px dashed #0FB600;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color: #515151;
+    margin: 1vh;
+  }
+  .hidden {
+    position: fixed;
+  }
+  .triangleShapeLeft {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #0FB600;
+    top: 50%;
+  }
+  .visible {
+    overflow: hidden;
+    position: fixed;
+  }
+  .triangleShapeRight {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #0FB600;
+  }
+}/*# sourceMappingURL=style.css.map */
