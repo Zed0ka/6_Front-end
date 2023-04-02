@@ -6,19 +6,24 @@
     letter-spacing: 1px;
     margin: 0;
   }
-  section {
+  .landingPage {
     width: 90vw;
   }
   h1 {
     letter-spacing: 2px;
   }
-  article, h1 {
+  .guideLanding, h1, .h2Slide, .formSign {
+    position: relative;
     border: 1px dashed #0FB600;
     border-radius: 5px;
     text-align: center;
     padding: 1%;
     margin: 5%;
     margin-left: 22vw;
+  }
+  ul {
+    list-style: none;
+    padding-left: 1%;
   }
   .yellow {
     color: #DCEE07;
@@ -31,69 +36,94 @@
   }
   footer {
     width: 90vw;
-    margin-left: 8vw;
+    margin-left: 12vw;
     padding-left: 8vw;
+  }
+  #copyright {
+    margin: 0 auto auto 43vw;
+  }
+  .clickBar {
+    position: fixed;
+    z-index: 1;
+    height: 110vh;
+    width: 8vw;
+    margin: 0;
+  }
+  .formContainer {
+    margin-right: 15vw;
+    padding-top: 25%;
+    padding-bottom: 25%;
   }
   .navslide {
     height: 100vh;
     width: 90vw;
   }
-  .clickBar {
-    position: fixed;
-    top: 0;
-    left: 0;
+  .clickBarCheckbox {
+    width: 0;
+    height: 0;
+  }
+  .separator {
+    display: inline-block;
+    font-size: 2em;
+    margin: 2% 5% 2% 33vw;
+  }
+  #submitSignUp, #submitSignIn {
+    border: 1px solid #0FB600;
+    background-color: #000000;
+    color: #0FB600;
+    font-weight: 600;
+    padding: 2% 5% 2% 5%;
+    margin: 2% 5% 2% 21vw;
+  }
+  #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck {
+    color: #ffffff;
+    border: 1px dashed #0FB600;
+    border-radius: 5px;
+    background-color: #7c7c7c;
+    margin: 1vh;
+    width: 90%;
+  }
+  .avatarSignContainer {
+    border: 1px solid #0FB600;
+    height: 8vh;
+    width: 15vw;
+    border-radius: 50%;
+    margin: 2% 40% 2% 35%;
+  }
+  .avatarSignContainer p {
     z-index: 1;
-    height: 100vh;
-    width: 5vw;
-    left: 10px;
-    margin: 0px;
+    text-align: center;
+    color: #DCEE07;
+  }
+  .fa-user {
+    height: 4vh;
+  }
+  .hidden {
+    position: absolute;
+    left: -500px;
   }
   .left {
     border-right: 2px solid #0FB600;
+    left: 0;
   }
-  .right {
-    border-left: 2px solid #0FB600;
-  }
-  .navslideCheckbox {
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #0FB600;
-  }
-  #signIn, #signUp {
-    position: relative;
-    margin: 33vw;
-  }
-  #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn {
-    border: 1px dashed #0FB600;
-    border-radius: 5px;
-    color: #FFFFFF;
-    background-color: #515151;
-    margin: 1vh;
-  }
-  .hidden {
+  /* .fa-solid {position: fixed;
+      top: 50%;} */
+  .fa-angles-right {
+    margin-right: 10vw;
     position: fixed;
-  }
-  .triangleShapeLeft {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #0FB600;
     top: 50%;
   }
   .visible {
-    overflow: hidden;
-    position: fixed;
-  }
-  .triangleShapeRight {
     position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #0FB600;
+    left: 0;
+  }
+  .right {
+    border-left: 2px solid #0FB600;
+    left: 91vw;
+  }
+  .fa-angles-left {
+    margin-right: 10vw;
+    position: fixed;
+    top: 50%;
   }
 }/*# sourceMappingURL=style.css.map */

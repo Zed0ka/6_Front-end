@@ -15,9 +15,9 @@
 <body>
     <!----------------- TRUE LANDING PAGE - GUIDE RAPIDE ----------------->
 
-    <section class="visible">
+    <section class="landingPage visible">
         <h1> BIENVENUE SUR PARTNERDS </h1>
-        <article id="guideLanding1">
+        <article id="guideLanding1" class="guideLanding">
             <h2>
                 <--- ICI --- 
             </h2>
@@ -31,23 +31,23 @@
                         et toutes.
                     </p>
         </article>
-        <article id="guideLanding2">
+        <article id="guideLanding2" class="guideLanding">
             <p>
                 Chacun et chacune aura la possibilité de <span class="yellow">contacter</span> et de proposer de
                 <span>rejoindre une session</span> selon les conditions établies par l'organisateur.ice.
             </p>
         </article>
-        <article id="guideLanding3">
+        <article id="guideLanding3" class="guideLanding">
             <p>
                 L'espace de membre contient :
             </p>
-            <ol>
+            <ul>
                 <li>Un planning simple d'utilisation</li>
                 <li>Une liste d'ami.es pour ne pas perdre vos partnerds</li>
                 <li>Un moteur de recherche paramétrables par <span class="yellow">jeux</span>, <span class="yellow">type de joueurs</span> ou <span class="yellow">visibilité</span></li>
-            </ol>
+            </ul>
         </article>
-        <article id="guideLanding4">
+        <article id="guideLanding4" class="guideLanding">
             <p>
                 - Restez à l'affut, la plate-forme évoluera pour encore plus faciliter le partage -
             </p>
@@ -60,37 +60,52 @@
             <a href="#"><img src="../img/🦆 icon _twitter_.png" alt="Aller sur le twitter du créateur"></a>
             <a href="#"><img src="../img/🦆 icon _money alt_.png" alt="Faire un don"></a>
         </footer>
+        <p id="copyright">©Zedoka</p>
     </section>
 
     <!----------------- SLIDE PAGE - CONNEXION & ENREGISTREMENT ----------------->
 
-    <div class="clickBar left">
-        <input type="checkbox"  class="navslideCheckbox" aria-label="Access the connexion and registration forms">
-            <div class="triangleShapeLeft"></div>
+    <div class="clickBar left flashing">
+        <input type="checkbox"  class="clickBarCheckbox" aria-label="Access the connexion and registration forms">
+            <i class="arrowIcon fa-solid fa-angles-right"></i>
         </button>
     </div>
     <aside class="navslide hidden">
         <div class="navslideContent">
-        <h1>
-            Se_connecter
-        </h1>
-        <form action="post" id="signUp">
-            <input type="email" name="email" id="emailSignUp" placeholder="email">
-            <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="mot_de_passe">
-            <input type="submit" placeholder="se_connecter">
-        </form>
-        <p>
-            //////
-        </p>
-        <h1>
-            S'enregistrer
-        </h1>
-        <form action="post" id="signIn">
-            <input type="email" name="email" id="emailSignIn" placeholder="email">
-            <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
-            <input type="text" name="passwordCheck" id="passwordCheck" placeholder="confirmer_mot_de_passe">
-        </form>
+            <div class="formContainer">
+                <h2 class="h2Slide">
+                    Se_connecter
+                </h2>
+                <form action="post" class="formSign">
+                    <div class="avatarSignContainer">
+                        <i class="fa-solid fa-user fa-2xl"></i>
+                        <p>?</p>
+                    </div>
+                    <input type="email" name="email" id="emailSignUp" placeholder="email">
+                    <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="mot_de_passe">
+                    <button type="submit" placeholder="se_connecter" id="submitSignUp" name="submitSignUp">Valider</button>
+                </form>
+            </div>
+            <p class="separator">
+                //////
+            </p>
+            <div class="formContainer">
+                <h2 class="h2Slide">
+                    Enregistrement
+                </h2>
+                <form action="post" class="formSign">
+                    <div class="avatarSignContainer">
+                        <i class="fa-solid fa-user fa-2xl"></i>
+                        <p>+</p>
+                    </div>
+                    <input type="email" name="email" id="emailSignIn" placeholder="email">
+                    <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
+                    <input type="text" name="passwordCheck" id="passwordCheck" placeholder="confirmer_mot_de_passe">
+                    <button type="submit" placeholder="Enregistrement" id="submitSignIn" name="submitSignIn">Valider</button>
+                </form>
+            </div>
+        </div>
     </aside>
 </body>
 </html>
-<script src="script.js"></script>
+<script src="slide.js"></script>
