@@ -42,13 +42,6 @@
   #copyright {
     margin: 0 auto auto 43vw;
   }
-  .clickBar {
-    position: fixed;
-    z-index: 1;
-    height: 110vh;
-    width: 8vw;
-    margin: 0;
-  }
   .formContainer {
     margin-right: 15vw;
     padding-top: 25%;
@@ -57,10 +50,6 @@
   .navslide {
     height: 100vh;
     width: 90vw;
-  }
-  .clickBarCheckbox {
-    width: 0;
-    height: 0;
   }
   .separator {
     display: inline-block;
@@ -85,18 +74,26 @@
   }
   .avatarSignContainer {
     border: 1px solid #0FB600;
-    height: 8vh;
-    width: 15vw;
-    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    border-radius: 70px;
     margin: 2% 40% 2% 35%;
   }
-  .avatarSignContainer p {
-    z-index: 1;
-    text-align: center;
-    color: #DCEE07;
+  .fa-user, .fa-user-bounty-hunter {
+    position: relative;
+    color: #0FB600;
+    top: 35%;
   }
-  .fa-user {
-    height: 4vh;
+  .clickBar {
+    position: fixed;
+    z-index: 1;
+    height: 110vh;
+    width: 8vw;
+    margin: 0;
+  }
+  .clickBarCheckbox {
+    width: 0;
+    height: 0;
   }
   .hidden {
     position: absolute;
@@ -120,10 +117,12 @@
   .right {
     border-left: 2px solid #0FB600;
     left: 91vw;
+    transition: translateX() 0.5s ease-out;
   }
   .fa-angles-left {
     margin-right: 10vw;
     position: fixed;
     top: 50%;
+    transition: rotate(180deg) 0.5s ease-out;
   }
 }/*# sourceMappingURL=style.css.map */
