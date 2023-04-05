@@ -1,34 +1,44 @@
-/* const gameCard = document.createElement div
-classList add gameCard
-displayGames.appendChild(".gameCard")
+const getGames = new Worker("workerGetGames.js")
 
-const gameCardTitle = document.createElement h4
-classList add h4 ("gameCardTitle")
-gameCard.appendChild("gameCardTitle")
+const displayGames = document.querySelector(".displayGames")
 
-const gameCardAuthor = document.createElement p
-classList add p ("gameCardAuthor")
-gameCard.appendChild("gameCardAuthor")
+const gameCard = document.createElement ("div");
+gameCard.classList.add("gameCard");
+displayGames.appendChild(".gameCard");
 
-const linebreak = document.createElement br
-gameCard.appendChild(linebreak)
+const gameCardTitle = document.createElement ("h4");
+gameCardTitle.classList.add("gameCardTitle");
+gameCardTitle.innerText= `${partie[nom_partie]}`;
+gameCard.appendChild("gameCardTitle");
 
-const gameCardGame = document.createElement p
-classList add p ("gameCardGame")
-gameCard.appendChild("gameCardGame")
+const gameCardAuthor = document.createElement ("p");
+gameCardAuthor.classList.add("gameCardAuthor");
+gameCardAuthor.innerText= `${utilisateur[pseudo_utilisateur]}`;
+gameCard.appendChild("gameCardAuthor");
 
-gameCard.appendChild(linebreak)
+const linebreak = document.createElement("br");
+gameCard.appendChild(linebreak);
 
-const gameCardDateStamp = document.createElement p
-classList add p ("gameCardDateStamp")
-gameCard.appendChild("gameCardDateStamp")
+const gameCardGame = document.createElement("p");
+gameCardGame.classList.add("gameCardGame");
+gameCardGame.innerText= `${jeu[nom_jeu]}`;
+gameCard.appendChild("gameCardGame");
 
-gameCard.appendChild(linebreak)
+gameCard.appendChild(linebreak);
 
-const gameCardDateStamp = document.createElement p
-classList add p ("gameCardDateStamp")
-gameCard.appendChild("gameCardDateStamp")
+const gameCardDateStamp = document.createElement("p");
+gameCardDateStamp.classList.add("gameCardDateStamp");
+gameCardDateStamp.innerText= `${jeu[nom_jeu]}`;
+gameCard.appendChild("gameCardDateStamp");
 
-const displayGameDetail = document.createElement button
-classList add button displayGameDetail
-gameCard.appendChild(".displayGameDetail") */
+gameCard.appendChild(linebreak);
+
+const displayGameDetail = document.createElement("button");
+displayGameDetail.classList.add("displayGameDetail");
+displayGameDetail.innerText="Ouvrir"
+gameCard.appendChild(".displayGameDetail");
+
+const addPlanning = document.createElement("button");
+addPlanning.classList.add("addPlanning");
+addPlanning.innerText="Je rejoins!"
+gameCard.appendChild(".addPlanning");
