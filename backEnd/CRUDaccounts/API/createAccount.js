@@ -1,2 +1,3 @@
 // fetch route
-// json encode
+// then
+// response.json

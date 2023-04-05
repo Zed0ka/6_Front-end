@@ -1,6 +1,6 @@
-const getGames = new Worker("workerGetGames.js")
+const getGames = new Worker("workerGetGames.js");
 
-const displayGames = document.querySelector(".displayGames")
+const displayGames = document.querySelector(".displayGames");
 
 const gameCard = document.createElement ("div");
 gameCard.classList.add("gameCard");
