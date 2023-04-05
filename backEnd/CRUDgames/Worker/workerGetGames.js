@@ -1,5 +1,5 @@
 const getGames = new Worker("workerGetGames.js");
-
+//! on message / message ????
 const displayGames = document.querySelector(".displayGames");
 
 const gameCard = document.createElement ("div");
