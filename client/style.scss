@@ -49,15 +49,19 @@
     //------------------------------------------------//
     //-----------------  ASIDE PAGE  -----------------//
     //------------------------------------------------//
+    .navslideContent{
+        height: 100vh;
+        width: 90vw;
+    }
     .formContainer{
         margin-right: 15vw;
         padding-top: 25%;
         padding-bottom: 25%;
     }
-    .navslide {
+/*     .navslide {
         height: 100vh;
         width: 90vw;
-    }
+    } */
     .separator {
         display: inline-block;
         font-size: 2em;
@@ -65,11 +69,16 @@
     }
     #submitSignUp, #submitSignIn {
         border: 1px solid #0FB600;
+        border-radius: 5px;
         background-color: #000000;
         color: #0FB600;
         font-weight: 600;
         padding: 2% 5% 2% 5%;
         margin: 2% 5% 2% 21vw;
+    }
+    #submitSignUp:active, #submitSignIn:active {
+        background-color: #0FB600;
+        color: #000000;
     }
     #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck {
         color: #ffffff;
@@ -86,10 +95,11 @@
         border-radius: 70px;
         margin: 2% 40% 2% 35%;
     }
-    .fa-user, .fa-user-bounty-hunter{
+    .fa-user{
         position: relative;
-        color: #0FB600;
+        color: #FFFFFF;
         top: 35%;
+        z-index: 1;
     }
         //-------------------------------------//
         //------------ SIDE BAR ---------------//
@@ -100,6 +110,11 @@
             height: 110vh;
             width: 8vw;
             margin: 0;
+        }
+        .clickBar:active{
+            background-color: #0FB600;
+            color: #000000;
+            transition: all 1s ease-in-out;
         }
         .clickBarCheckbox {
             width: 0; 
@@ -118,7 +133,6 @@
     }
     /* .fa-solid {position: fixed;
         top: 50%;} */ //! mauvaise idée - risque d'altérer les autres "fa-solid" - utiliser une règle SASS : fa-angles% aura les propriétés communes au deux 
-    
     .fa-angles-right {
         margin-right: 10vw;
         position: fixed;
@@ -133,8 +147,9 @@
     }
     .right { //clickbar property//
         border-left: 2px solid #0FB600;
-        left: 91vw;
-        transition: translateX() 0.5s ease-out;
+/*         left: 91vw; */
+        transform: translateX(91vw);
+        transition: translateX(91vw) 1s ease-out;
     }
     .fa-angles-left {
         margin-right: 10vw;
