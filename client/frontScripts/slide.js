@@ -1,3 +1,4 @@
+// script d'animation des flèches et des sliders (mobile) :
 const clickBar = document.querySelector(".clickBar");
 const guide = document.querySelector(".landingPage");
 const navslide = document.querySelector(".navslide");

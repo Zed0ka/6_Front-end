@@ -1,4 +1,5 @@
 <?php
+// route présentant toutes les parties présentant les critères de recherche
     include_once './backEnd/utils/joinDB.php';
     
     //finir BDD d'abord

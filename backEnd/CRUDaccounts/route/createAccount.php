@@ -23,7 +23,7 @@ if(isset($_POST["submit"])) {
                 die("Erreur :".$error->getMessage());
             }
         } else {
-            echo 'Veuillez remplir tous les champs obligatoire';
+            echo 'Veuillez remplir tous les champs obligatoires';
         }
     }
 ?>
