@@ -1,0 +1,14 @@
+Faire simple :
+Créer un compte = ajouter mail, pseudo, mdp; (pour l'instant : 1 seul, l'admin)
+Créer une partie = créer une boite qui contient : date prévue, date création (timestamp), nom créateur, nom jeu, description, titre, qté_participants (1 au début),id_participants;
+Chercher = ouvrir la db et afficher dans des cards toutes les lignes;
+S'ajouter à une partie = changer le nombre de participants (+1), ajouter l'id du user ;
+
+==> parties rightjoin comptes 
+
+==> résultat : je fais: 
+- 2 tables, 
+- 1 seule formule (la qté_participants qui est une somme de la quté d' id_participants), 
+- une fk, 
+- un rightjoin
+On verra plus tard pour l'api jeux (a mettre dans les projets d'évolution)
