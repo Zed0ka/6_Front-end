@@ -61,18 +61,30 @@
                 </p>
             </article>
         </main>
-        <footer class="network">
+        <nav class="buttonsAside desktopOnly">
+            <ul>
+                <li><a href="">s'inscrire</a></li>
+                <li><a href="">se connecter</a></li>
+                <li>reseaux 
+                    <div class="desktopOnly">
+                        <a href="#"><img src="./img/🦆 icon _instagram_.png" alt="Aller sur l'instagram du créateur"></a>
+                        <a href="#"><img src="./img/🦆 icon _twitter_.png" alt="Aller sur le twitter du créateur"></a>
+                        <a href="#"><img src="./img/🦆 icon _money alt_.png" alt="Faire un don"></a>
+                    </div> 
+                </li>
+            </ul>
+        </nav>
+        <footer class="network mobileOnly">
             <a href="#"><img src="./img/🦆 icon _instagram_.png" alt="Aller sur l'instagram du créateur"></a>
             <a href="#"><img src="./img/🦆 icon _twitter_.png" alt="Aller sur le twitter du créateur"></a>
             <a href="#"><img src="./img/🦆 icon _money alt_.png" alt="Faire un don"></a>
         </footer>
-        <p id="copyright">©Zedoka</p>
+        <p id="copyright">©Zedoka</p> <!-- actualiser date avec script -->
     </section>
-
     <!----------------- MOBILE SLIDE PAGE - CONNEXION & ENREGISTREMENT ----------------->
     <!----------------- MOBILE BOUTON SLIDER ----------------->
     <aside class="navslide hidden">
-        <div class="clickBar left flashing">
+        <div class="clickBar left flashing mobileOnly">
             <input type="checkbox"  class="clickBarCheckbox" aria-label="Access the connexion and registration forms">
             <i class="arrowIcon fa-solid fa-angles-right"></i>
         </div>
@@ -109,14 +121,8 @@
                 </form>
             </div>
         </div>
-        <nav class="buttonsAside desktopOnly">
-            <ul>
-                <li><a href=""></a>Mon Compte</li>
-                <li><a href=""></a>Rechercher une partie</li>
-                <li><a href=""></a>Créer une partie</li>
-            </ul>
-        </nav>
     </aside>
 </body>
 </html>
 <script src="./frontScripts/slide.js"></script>
+<script src="./frontScripts/copyrightUpdate.js"></script>

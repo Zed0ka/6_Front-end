@@ -43,7 +43,7 @@ h1 {
         list-style: none;
         padding-left: 1%;
     }
-    footer {
+    .network {
         width: 90vw;
         margin-left: 12vw;
         padding-left: 8vw;
@@ -155,13 +155,19 @@ h1 {
 }
 /*------------------------------------------------ DESKTOP ------------------------------------------------*/
 @media screen and (min-width: 526px) {
+    .mobileOnly{
+        display: none;
+    }
+    /*------------------------------------------------//
+    //-------------  LANDING PAGE GRID  --------------//
+    //------------------------------------------------*/
     section {
         display: grid;
         grid-template-areas: 
-            "head head head"
+            ". head ."
             "deco deco deco"
-            "side main none"
-            "side main none"
+            "side1 main ."
+            "side2 main ."
             "data data data"
             "foot foot foot";
     }
@@ -171,48 +177,75 @@ h1 {
     .welcomeTextDiv{
         grid-area: head;
     }
-    .welcomeTextDiv>h1{
+    .welcomeTextDiv>h1{ /*center*/
         position: relative;
-        left: 45%;
         border: 2px #0FB600 dashed;
         border-radius: 10px;
         margin-top: 0 2vh 0 2vh;
         width: 20vw;
         padding: 0.5vw;
     }
-    .titleLine { /*Ligne derrière le titre partnerds*/
+    .titleLine { /*decorative underline*/
         grid-area: deco;
         border-top: 8px solid gray;
         width: 100vw;
         margin: 1.75vh 0 1.75vh 0;
     }
-    .decoTitle {
+    .decoTitle { /*à centrer*/
         position: absolute;
         grid-area: deco;
-        font-size: 90px; /* police 32*/
+        font-size: 90px; /* fontsize 32*/
         z-index: 10;
-        left: 42.5%;
         top: 5%;
         margin: 0 auto;
     }
+    /*-------------  landing page guides  --------------*/
     .guidesContainer {
         grid-area: main;
         display: flex;
         flex-flow: row wrap;
-        
     }
     .guideLanding {
         border: 1px dashed #0FB600;
         border-radius: 5px;
         text-align: center;
-        padding: 1%;
-        width: 25vw;
-        margin: 1vw 1vh 0 0;
+        padding: 3%;
+        width: 30vw;
+        margin: 1vh 2vw;
     }
-    #copyright{
-        grid-area: foot;
+    /*-------------  side nav buttons  --------------*/
+    .buttonsAside{
+        grid-area: side1;
     }
     .buttonsAside>ul{
         list-style: none;
+    }
+    .buttonsAside>ul>li{
+        margin-bottom: 2vh;
+        width: 15vw;
+    }
+    .buttonsAside>ul>li>a{
+        color: #0FB600;
+        max-width: 10vw;
+        text-decoration-line: none;
+        font-size: 30px;
+        border: 2px dashed #0FB600;
+        border-radius: 5px;
+        padding: 0.5vh 1.5vw;
+    }
+    .buttonsAside>ul>li:nth-child(3){
+        position: absolute;
+        text-align: center;
+        border: 2px dashed #0FB600;
+        border-radius: 5px;
+        max-width: 15vw;
+    }
+    .network{
+        grid-area: side2;
+        border: 0;
+    }
+    #copyright{
+        grid-area: foot;
+        text-align: center;
     }
 }
