@@ -1,22 +1,36 @@
+/*------------------------------------------------ GENERAL ------------------------------------------------*/
+body {
+    background-color: #000000;
+    color: #0FB600;
+    font-family: Fira Code, monospace;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.yellow {
+    color: #DCEE07;
+}
+.red {
+    color: #B60B00;
+}
+.white {
+    color: #FFFFFF;
+}
+h1 {
+    letter-spacing: 2px;
+}
+/*------------------------------------------------ MOBILE ------------------------------------------------*/
 @media screen and (max-width: 525px) {
     /*------------------------------------------------//
     //------------------ DARK THEME ------------------//
     //------------------ LANDING PAGE ----------------//
     //------------------------------------------------*/
-    body {
-        background-color: #000000;
-        color: #0FB600;
-        font-family: VT323;
-        letter-spacing: 1px;
-        margin: 0;
+    .desktopOnly{
+        display: none;
     }
     .landingPage {
         width: 90vw;
     }
-    h1 {
-        letter-spacing: 2px;
-    }
-    .guideLanding, h1, .h2Slide, .formSign {
+    .guideLanding, .welcomeTextDiv, .h2Slide, .formSign {
         position: relative;
         border: 1px dashed #0FB600;
         border-radius: 5px;
@@ -28,15 +42,6 @@
     ul {
         list-style: none;
         padding-left: 1%;
-    }
-    .yellow {
-        color: #DCEE07;
-    }
-    .red {
-        color: #B60B00;
-    }
-    .white {
-        color: #FFFFFF;
     }
     footer {
         width: 90vw;
@@ -58,10 +63,6 @@
         padding-top: 25%;
         padding-bottom: 25%;
     }
-    /*     .navslide {
-            height: 100vh;
-            width: 90vw;
-        } */
     .separator {
         display: inline-block;
         font-size: 2em;
@@ -131,8 +132,6 @@
         border-right: 2px solid #0FB600;
         left: 0;
     }
-    /* .fa-solid {position: fixed;
-        top: 50%;} */
     .fa-angles-right {
         margin-right: 10vw;
         position: fixed;
@@ -152,5 +151,68 @@
         position: fixed;
         top: 50%;
         transition: rotate(180deg) 0.5s ease-out;
+    }
+}
+/*------------------------------------------------ DESKTOP ------------------------------------------------*/
+@media screen and (min-width: 526px) {
+    section {
+        display: grid;
+        grid-template-areas: 
+            "head head head"
+            "deco deco deco"
+            "side main none"
+            "side main none"
+            "data data data"
+            "foot foot foot";
+    }
+    .desktopOnly, h1, .decoTitle {
+        text-transform: uppercase;
+    }
+    .welcomeTextDiv{
+        grid-area: head;
+    }
+    .welcomeTextDiv>h1{
+        position: relative;
+        left: 45%;
+        border: 2px #0FB600 dashed;
+        border-radius: 10px;
+        margin-top: 0 2vh 0 2vh;
+        width: 20vw;
+        padding: 0.5vw;
+    }
+    .titleLine { /*Ligne derrière le titre partnerds*/
+        grid-area: deco;
+        border-top: 8px solid gray;
+        width: 100vw;
+        margin: 1.75vh 0 1.75vh 0;
+    }
+    .decoTitle {
+        position: absolute;
+        grid-area: deco;
+        font-size: 90px; /* police 32*/
+        z-index: 10;
+        left: 42.5%;
+        top: 5%;
+        margin: 0 auto;
+    }
+    .guidesContainer {
+        grid-area: main;
+        display: flex;
+        flex-flow: row wrap;
+        
+    }
+    .guideLanding {
+        border: 1px dashed #0FB600;
+        border-radius: 5px;
+        text-align: center;
+        padding: 1%;
+        width: 25vw;
+        margin: 1vw 1vh 0 0;
+    }
+    #copyright{
+        grid-area: foot;
+    }
+    .buttonsAside>ul{
+        list-style: none;
     }
 }
