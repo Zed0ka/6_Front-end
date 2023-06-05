@@ -1,10 +1,10 @@
-// script d'animation des flèches et des sliders (mobile) :
+// Mobile script : slide-button and menu
 const clickBar = document.querySelector(".clickBar");
 const guide = document.querySelector(".landingPage");
 const navslide = document.querySelector(".navslide");
 const arrowIcon = document.querySelector(".arrowIcon");
 
-// intégrer la désactivation de la classe flashing au click
+//todo : add flashing anim on the slide-button for attention attraction
 
 clickBar.addEventListener("click",(event)=>{
     clickBar.classList.toggle("left");              //!switch de la classe "left" à "right" (et inversement sur un nouveau click) PAS BON
@@ -12,7 +12,7 @@ clickBar.addEventListener("click",(event)=>{
     arrowIcon.classList.toggle("fa-angles-right");  
     arrowIcon.classList.toggle("fa-angles-left");   
     guide.classList.toggle("visible");              
-    guide.classList.toggle("hidden");               
-    navslide.classList.toggle("hidden");            
+    guide.classList.toggle("hiddenLeft");               
+    navslide.classList.toggle("hiddenLeft");            
     navslide.classList.toggle("visible");           
 })

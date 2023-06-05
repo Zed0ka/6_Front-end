@@ -14,8 +14,8 @@
 </head>
 <body>
     <!----------------- TRUE LANDING PAGE ----------------->
-
-    <section class="landingPage visible">
+<div class="popupBackground"><!-- add popupBackground when popup is on -->
+    <section class="landingPage visible"> 
         <div class="welcomeTextDiv">
             <h1> Bienvenue sur Partnerds </h1>
         </div>
@@ -37,28 +37,29 @@
                         </p>
             </article>
             <article id="guideLanding2" class="guideLanding">
-                <p>
-                    Chacun et chacune aura la possibilité de <span class="yellow">contacter</span> et de proposer de
-                    <span>rejoindre une session</span> selon les conditions établies par l'organisateur.ice.
-                </p>
+                <ul>
+                    <li>
+                        <p>
+                            Chacun et chacune aura la possibilité de <span class="yellow">contacter</span> et de proposer de
+                            <span>rejoindre une session</span> selon les conditions établies par l'organisateur.ice.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, placeat omnis! Suscipit id reiciendis repudiandae atque facere modi dolor, pariatur, alias delectus nihil ut aut facilis eius a, voluptatem repellendus.
+                        </p>
+                    </li>
+                </ul>
             </article>
             <article id="guideLanding3" class="guideLanding">
                 <p>
                     L'espace de membre contient :
                 </p>
                 <ul>
-                    <li>Un planning simple d'utilisation</li>
-                    <li>Une liste d'ami.es pour ne pas perdre vos partnerds</li>
-                    <li>Un moteur de recherche paramétrables par <span class="yellow">jeux</span>, <span class="yellow">type de joueurs</span> ou <span class="yellow">visibilité</span></li>
+                    <li><p>Un planning simple d'utilisation</p></li>
+                    <li><p>Une liste d'ami.es pour ne pas perdre vos partnerds</p></li>
+                    <li><p>Un moteur de recherche paramétrables par <span class="yellow">jeux</span>, <span class="yellow">type de joueurs</span> ou <span class="yellow">visibilité</span>.</p></li> A bientôt !
                 </ul>
-            </article>
-            <article id="guideLanding4" class="guideLanding">
-                <p>
-                    - Restez à l'affut, la plate-forme évoluera pour encore plus faciliter le partage -
-                </p>
-                <p>
-                    A bientôt : )
-                </p>
             </article>
         </main>
         <nav class="buttonsAside desktopOnly">
@@ -74,55 +75,84 @@
                 </li>
             </ul>
         </nav>
+        <footer class="desktopFooter desktopOnly">
+            <div class="countersDiv">
+                <div class="counter totalSignedInMembers">
+                    <h3>
+                        Membres inscrits
+                    </h3>
+                    <p>
+                        ----
+                    </p>
+                </div>
+                <div class="counter totalConnexions">
+                    <h3>
+                        Connexions Totales
+                    </h3>
+                    <p>
+                        ----
+                    </p>
+                </div>
+                <div class="counter totalGames">
+                    <h3>Parties Organisées</h3>
+                    <p>
+                        ----
+                    </p>
+                </div>
+            </div>
+        </footer>
         <footer class="network mobileOnly">
             <a href="#"><img src="./img/🦆 icon _instagram_.png" alt="Aller sur l'instagram du créateur"></a>
             <a href="#"><img src="./img/🦆 icon _twitter_.png" alt="Aller sur le twitter du créateur"></a>
             <a href="#"><img src="./img/🦆 icon _money alt_.png" alt="Faire un don"></a>
         </footer>
-        <p id="copyright">©Zedoka</p> <!-- actualiser date avec script -->
+        <p id="copyright">©Zedoka</p> <!-- actualiser date avec script js -->
     </section>
     <!----------------- MOBILE SLIDE PAGE - CONNEXION & ENREGISTREMENT ----------------->
     <!----------------- MOBILE BOUTON SLIDER ----------------->
-    <aside class="navslide hidden">
+    <aside class="navslide hiddenLeft">
         <div class="clickBar left flashing mobileOnly">
             <input type="checkbox"  class="clickBarCheckbox" aria-label="Access the connexion and registration forms">
             <i class="arrowIcon fa-solid fa-angles-right"></i>
         </div>
     <!----------------- CONTENU DE SLIDE ----------------->
-        <div class="navslideContent">
-            <div class="formContainer">
+        <div class="navslideContent "> <!--! missing : deactivated class-->
+            <div class="formContainer showSignIn"> <!--! missing : hideSignIn class-->
                 <h2 class="h2Slide">
-                    Se_connecter
+                    Connexion
                 </h2>
                 <form action="post" class="formSign">
                     <div class="avatarSignContainer">
-                        <i class="fa-solid fa-user fa-2xl"></i>
+                        <img class="avatarSign" src="./img/default_avatar.png" alt="Avatar par defaut">
                     </div>
-                    <input type="email" name="email" id="emailSignUp" placeholder="email">
-                    <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="mot_de_passe">
-                    <button type="submit" placeholder="se_connecter" id="submitSignUp" name="submitSignUp">Valider</button>
+                    <input type="email" name="emailSignIn" id="emailSignIn" placeholder="email">
+                    <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
+                    <button type="submit" placeholder="Se_Connecter" id="submitSignIn" name="submitSignIn">Valider</button>
                 </form>
             </div>
-            <p class="separator">
+            <p class="separator mobileOnly">
                 //////
             </p>
-            <div class="formContainer">
+            <div class="formContainer hideSignUp"> <!--! missing : hideSignUp class-->
                 <h2 class="h2Slide">
-                    Enregistrement
+                    Inscription
                 </h2>
                 <form action="post" class="formSign">
                     <div class="avatarSignContainer">
-                        <i class="fa-solid fa-user fa-2xl"></i>
+                        <img class="avatarSign" src="./img/default_avatar.png" alt="Avatar par defaut">
                     </div>
-                    <input type="email" name="email" id="emailSignIn" placeholder="email">
-                    <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
+                    <input type="email" name="emailSignUp" id="emailSignUp" placeholder="email">
+                    <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="mot_de_passe">
                     <input type="text" name="passwordCheck" id="passwordCheck" placeholder="confirmer_mot_de_passe">
-                    <button type="submit" placeholder="Enregistrement" id="submitSignIn" name="submitSignIn">Valider</button>
+                    <button type="submit" placeholder="Enregistrement" id="submitSignUp" name="submitSignUp">Valider</button>
                 </form>
             </div>
         </div>
     </aside>
+</div>
 </body>
 </html>
 <script src="./frontScripts/slide.js"></script>
 <script src="./frontScripts/copyrightUpdate.js"></script>
+<script src="./frontScripts/landingPage/landingCounters.js"></script>
+<script src="./frontScripts/landingPage/landingPopup.js"></script>

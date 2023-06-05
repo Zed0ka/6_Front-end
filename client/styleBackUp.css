@@ -18,12 +18,15 @@ body {
 h1 {
     letter-spacing: 2px;
 }
+.hidden {
+    display: none;
+}
 /*------------------------------------------------ MOBILE ------------------------------------------------*/
 @media screen and (max-width: 525px) {
-    /*------------------------------------------------//
-    //------------------ DARK THEME ------------------//
-    //------------------ LANDING PAGE ----------------//
-    //------------------------------------------------*/
+    /*------------------------------------------------*/
+    /*------------------ DARK THEME ------------------*/
+    /*------------------ LANDING PAGE ----------------*/
+    /*------------------------------------------------*/
     .desktopOnly{
         display: none;
     }
@@ -36,8 +39,8 @@ h1 {
         border-radius: 5px;
         text-align: center;
         padding: 1%;
-      margin: 5%;
-      margin-left: 22vw;
+        margin: 5%;
+        margin-left: 22vw;
     }
     ul {
         list-style: none;
@@ -51,10 +54,10 @@ h1 {
     #copyright {
         margin: 0 auto auto 43vw;
     }
-    /*------------------------------------------------//
-    //-----------------  ASIDE PAGE  -----------------//
-    //------------------------------------------------*/
-    .navslideContent {
+    /*------------------------------------------------*/
+    /*-----------------  ASIDE PAGE  -----------------*/
+    /*------------------------------------------------*/
+    .navslideContent { /*animation slide content à déclencher au click (classtoggle) AVEC le slider*/
         height: 100vh;
         width: 90vw;
     }
@@ -91,20 +94,19 @@ h1 {
     }
     .avatarSignContainer {
         border: 1px solid #0FB600;
-        height: 60px;
-        width: 60px;
-        border-radius: 70px;
-        margin: 2% 40% 2% 35%;
+        height: 6vmax;
+        width: 6vmax;
+        border-radius: 100%;
     }
-    .fa-user {
-        position: relative;
-        color: #FFFFFF;
-        top: 35%;
-        z-index: 1;
+    .avatarSign {
+        object-position: 50% 50%;
+        object-fit: fill;
+        height: 6vmax;
+        width: 6vmax;
     }
-    /*-------------------------------------//
-    //------------ SIDE BAR ---------------//
-    //-------------------------------------*/
+    /*-------------------------------------*/
+    /*------------ SIDE BAR ---------------*/
+    /*-------------------------------------*/
     .clickBar {
         position: fixed;
         z-index: 1;
@@ -121,16 +123,17 @@ h1 {
         width: 0;
         height: 0;
     }
-    /*--------------------------------------//
-    //--------- Button not clicked ---------//
-    //--------------------------------------*/
-    .hidden {
+    /*--------------------------------------*/
+    /*--------- Button not clicked ---------*/
+    /*--------------------------------------*/
+    .hiddenLeft {
         position: absolute;
         left: -500px;
     }
     .left {
         border-right: 2px solid #0FB600;
         left: 0;
+        transition: ease-in-out 1s; /*! check it */
     }
     .fa-angles-right {
         margin-right: 10vw;
@@ -158,43 +161,48 @@ h1 {
     .mobileOnly{
         display: none;
     }
-    /*------------------------------------------------//
-    //-------------  LANDING PAGE GRID  --------------//
-    //------------------------------------------------*/
+    /*------------------------------------------------*/
+    /*-------------  LANDING PAGE GRID  --------------*/
+    /*------------------------------------------------*/
     section {
         display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
         grid-template-areas: 
-            ". head ."
-            "deco deco deco"
-            "side1 main ."
-            "side2 main ."
-            "data data data"
-            "foot foot foot";
+            "head head head head"
+            "deco deco deco deco"
+            "side main main main"
+            "side main main main"
+            "data data data data"
+            "foot foot foot foot";
+        align-items: center;
+        justify-items: center;
+    }
+    .decoTitle{
+        font-family: VT323;
     }
     .desktopOnly, h1, .decoTitle {
         text-transform: uppercase;
     }
     .welcomeTextDiv{
         grid-area: head;
+        text-align: center;
     }
-    .welcomeTextDiv>h1{ /*center*/
-        position: relative;
+    .welcomeTextDiv>h1{ 
         border: 2px #0FB600 dashed;
         border-radius: 10px;
         margin-top: 0 2vh 0 2vh;
-        width: 20vw;
-        padding: 0.5vw;
+        padding: 0.5vmax;
     }
     .titleLine { /*decorative underline*/
         grid-area: deco;
-        border-top: 8px solid gray;
+        border-top: 10px solid gray;
         width: 100vw;
         margin: 1.75vh 0 1.75vh 0;
+        padding: 0;
     }
-    .decoTitle { /*à centrer*/
-        position: absolute;
+    .decoTitle {
         grid-area: deco;
-        font-size: 90px; /* fontsize 32*/
+        font-size: 5vmax; /* fontsize 32*/
         z-index: 10;
         top: 5%;
         margin: 0 auto;
@@ -202,8 +210,11 @@ h1 {
     /*-------------  landing page guides  --------------*/
     .guidesContainer {
         grid-area: main;
+        justify-self: left;
         display: flex;
         flex-flow: row wrap;
+        justify-content: center;
+        max-width: 65vw;
     }
     .guideLanding {
         border: 1px dashed #0FB600;
@@ -212,40 +223,139 @@ h1 {
         padding: 3%;
         width: 30vw;
         margin: 1vh 2vw;
+        font-size: 1vmax;
+        flex-basis: 20vw;
+    }
+    .guideLanding ul {
+        list-style: none;
     }
     /*-------------  side nav buttons  --------------*/
     .buttonsAside{
-        grid-area: side1;
+        grid-area: side;
+        align-self:normal;
     }
     .buttonsAside>ul{
         list-style: none;
-    }
-    .buttonsAside>ul>li{
-        margin-bottom: 2vh;
         width: 15vw;
     }
-    .buttonsAside>ul>li>a{
+    .buttonsAside>ul>li{
+        margin-bottom: 2.5vh;
+    }
+    .buttonsAside>ul>li>a, .buttonsAside>ul>li:nth-child(3){
         color: #0FB600;
-        max-width: 10vw;
+        display: block;
         text-decoration-line: none;
-        font-size: 30px;
-        border: 2px dashed #0FB600;
-        border-radius: 5px;
-        padding: 0.5vh 1.5vw;
-    }
-    .buttonsAside>ul>li:nth-child(3){
-        position: absolute;
         text-align: center;
+        font-size: 1vmax;
         border: 2px dashed #0FB600;
-        border-radius: 5px;
-        max-width: 15vw;
+        border-radius: 10px;
+        padding: 0.5vh 1.5vw;
+        width: 10vw;
     }
-    .network{
-        grid-area: side2;
-        border: 0;
+    .buttonsAside>ul>li:nth-child(3)>div a img{
+        max-width: 2vmax;
+        padding: 0.5vmin;
+    }
+    /*-------------  counters && footers --------------*/
+    .desktopFooter {
+        grid-area: data;
+    }
+
+    footer>.countersDiv {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .counter h3,.counter p {
+        font-size: 1vmax;
+        border: 2px dashed #0FB600;
+        text-align: center;
+        border-radius: 10px;
+        padding: 1vmin;
+    }
+    .counter:nth-child(2), .counter:last-child {
+        margin-left: 5vmax;
     }
     #copyright{
         grid-area: foot;
         text-align: center;
+    }
+    /*-------------  SignUp && SignIn popups --------------*/
+    .deactivated { /*deactivated class for the mobile navslide*/
+        display: none;
+    }
+    .hideSignUp, .hideSignIn { /*hidden classes for the signin and signup elements*/
+        display: none;
+    }
+    .popupBackground {  /*!opacity affects all the page, why ?*/
+        background-position: top;
+        z-index: 100;
+/*         opacity: 0.2; */
+        background-color: #0000FF;
+        transition: ease-in-out 1s;
+    }
+    .showSignUp, .showSignIn {
+        position: fixed;
+        z-index: 150;
+        width: 20vmax;
+        top: 33vh;
+        left: 40vw;
+        background-color: #000000;
+        border: 2px dashed #0FB600;
+        transition: ease-in-out 1s;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .showSignIn h2, .showSignUp h2 {
+        border: 2px dashed #0FB600;
+        width: 10vmax;
+        border-radius: 10px;
+        text-align: center;
+        padding: 0.5vh;
+        font-size: 1.25vmax;
+        margin-bottom: 0.5vmax;
+    }
+    .formSign {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        text-decoration-line: none;
+        text-align: center;
+        padding: 0.5vmax 1.5vmax;
+        width: 20vmax;
+    }
+    .formSign input {
+        flex-basis: 2vmin;
+    }
+    .avatarSignContainer {
+        border: 1px solid #0FB600;
+        height: 3vmax;
+        width: 3vmax;
+        border-radius: 100%;
+    }
+    .avatarSign {
+        object-position: 50% 50%;
+        object-fit: fill;
+        height: 3vmax;
+        width: 3vmax;
+    }
+    #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck {
+        border: 1px dashed #0FB600;
+        border-radius: 5px;
+        background-color: #7c7c7c;
+        color: #ffffff;
+        margin: 0.5vmax;
+        width: 10vmin;
+    }
+    #submitSignUp, #submitSignIn {
+        border: 1px solid #0FB600;
+        border-radius: 10px;
+        background-color: #000000;
+        color: #0FB600;
+        font-weight: 600;
+        padding: 2% 5% 2% 5%;
     }
 }

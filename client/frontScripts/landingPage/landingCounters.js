@@ -1,0 +1,1 @@
+/* All scripts about counting stats, members, games created... See mockup for more info */
