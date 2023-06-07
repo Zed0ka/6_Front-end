@@ -1,0 +1,4 @@
+Contient tous les chemins d'accès vers toutes les pages du site SAUF celles qu'on ne veut pas voir référencées.
+Utile pour planquer la page d'administration.
+
+

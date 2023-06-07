@@ -4,26 +4,126 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partnerds - page principale</title>
+    <link rel="stylesheet" href="assets/styles/mobile.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <title>Partnerds - page de recherche</title>
 </head>
 <body>
-    <!----------------- NAVIGATION - SLIDER (mobile) & NAVBAR (desktop) ----------------->
-    <aside class="navslide hidden">
-        <div class="clickBar left flashing">
-            <input type="checkbox"  class="clickBarCheckbox" aria-label="Access the connexion and registration forms">
+    <!----------------- SEARCH MENU ----------------->
+<section class="landingPage visible"> 
+    <div class="welcomeTextDiv">
+        <h1> Recherchez vos Parties </h1>
+    </div>
+    <div class="desktopOnly titleLine"></div>
+    <h1 class="desktopOnly decoTitle">partnerds</h1>
+    <section>
+        <form class="formSign" id="formSearch"> <!-- Game search form -->
+            <input type="text" name="gameTitleSearch" id="gameTitleSearch" placeholder="Recherche par titre">
+            <input type="text" name="gameSearch" id="gameSearch" placeholder="Recherche par jeu">
+            <ul>
+                <li>
+                    <input type="radio" name="gameType" id="gameTypeVideoGame" value="gameTypeVideoGame">
+                    <label for="gameTypeVideoGame">Jeu vidéo</label>
+                </li>
+                <li>
+                    <input type="radio" name="gameType" id="gameTypeBoardGame" value="gameTypeBoardGame">
+                    <label for="gameTypeBoardGame">Jeu de Société</label>
+                </li>
+                <li>
+                    <input type="radio" name="gameType" id="gameTypeUnimportant" value="gameTypeUnimportant" checked>
+                    <label for="gameTypeUnimportant">Indifférent.e</label>
+                </li>
+            </ul>
+            <p class="separator mobileOnly">
+                //////
+            </p>
+            <ul>
+                <li>
+                    <input type="radio" name="difficulty" id="difficultyBeginner" value="difficultyBeginner">
+                    <label for="difficultyBeginner">Débutant.e seulement</label></li>
+                <li>
+                    <input type="radio" name="difficulty" id="difficultyPro" value="difficultyPro">
+                    <label for="difficultyPro">Pro seulement</label></li>
+                <li>
+                    <input type="radio" name="difficulty" id="difficultyUnimportant" value="difficultyUnimportant" checked>
+                    <label for="difficultyUnimportant">Indifférent.e</label></li>
+            </ul>
+            <p class="separator mobileOnly">
+                //////
+            </p>
+            <ul>
+                <li>
+                    <input type="checkbox" name="multiplayerOnly" id="multiplayerOnly">
+                    <label for="multiplayerOnly">Multijoueur seulement</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="alreadyFull" id="alreadyFull">
+                    <label for="alreadyFull">Partie déjà pleine</label>
+                </li>
+                <li>
+                    <input type="checkbox" name="friendsOnly" id="friendsOnly">
+                    <label for="friendsOnly">Ami.es seulement</label>
+                </li>
+            </ul>
+            <button type="submit" placeholder="Rechercher" id="submitSearch" name="submitSearch">Rechercher</button>
+        </form>
+        <section class="cardsContainer">
+                <!-- game card structure for js DOM management -->
+                <!-- 
+                    <article class="gameCard">
+                    <h3 class="gameCardTitle">Nom de la partie</h3>
+                    <p class="gameCardDate">date prévue de la partie</p>
+                    <p class="gameName">nom du jeu</p>
+                    <p class="gameType">Type de jeu (société ou vidéo)</p>
+                    <p class="gameDifficulty">Difficulté (débutant ou pro)</p>
+                    <p class="gameMultiplayerYN">Multijoueur ou non</p>
+                    <p class="gameFriendOrNo"> Ami ou non</p>
+                    </article>
+                -->
+        </section>
+    </section>
+    <!----------------- MOBILE SLIDE PAGE - NAVIGATION && SEARCH RESULTS ----------------->
+    <!----------------- MOBILE BOUTON SLIDER ----------------->
+    <aside class="navslide hiddenLeft">
+        <div class="clickBar left flashing mobileOnly">
+            <input type="checkbox" class="clickBarCheckbox" aria-label="Access the search results">
             <i class="arrowIcon fa-solid fa-angles-right"></i>
         </div>
-        <nav>
+        <div class="navslideContent deactivated"> <!--! scripting : deactivated class-->
+            <ul class="mainButtons">
+                <li><a href="">Compte</a></li>
+                <li><a href="">Rechercher</a></li>
+                <li><a href="">Créer</a></li>
+            </ul>
+            <div class="formContainer hideSignIn"> <!--! toggle : showSignIn class-->
+                <h2 class="h2Slide">
+                    Connexion
+                </h2>
+                <form action="post" class="formSign" id="formSignIn">
+                    <div class="avatarSignContainer">
+                        <img class="avatarSign" src="./assets/img/default_avatar.png" alt="Avatar par defaut">
+                    </div>
+                    <input type="email" name="emailSignIn" id="emailSignIn" placeholder="email">
+                    <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
+                    <button type="submit" id="submitSignIn" name="submitSignIn">Valider</button>
+                </form>
+            </div>
+        <nav class="buttonsAside desktopOnly">
+            <ul class="mainButtons">
+                <li><a href="">Compte</a></li>
+                <li><a href="">Rechercher</a></li>
+                <li><a href="">Créer</a></li>
+            </ul>
             <ul>
-                <li><a href=""></a>Mon Compte</li>
-                <li><a href=""></a>Rechercher une partie</li>
-                <li><a href=""></a>Créer une partie</li>
+                <li><a href="">Se déconnecter</a></li>
             </ul>
         </nav>
     </aside>
-    <!----------------- ESPACE D'AFFICHAGE ----------------->
-    <main id="displayAny">
-    </main>
+    <p id="copyright">©Zedoka</p> <!-- actualiser date avec script js -->
+</section>
 </body>
 </html>
+<script src="./frontScripts/slide.js"></script>
 <script src="../backEnd/CRUDgames/Worker/workerGetGames.js"></script>
+<script src="../backEnd/CRUDgames/API/getGames.js"></script>
+<script src="../backEnd/CRUDgames/API/getGame.js"></script>

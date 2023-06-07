@@ -1,0 +1,235 @@
+/*------------------------------------------------ GENERAL ------------------------------------------------*/
+/*todo: switch all px to vmin or vmax including borders and font-sizes*/
+/*todo: text-transform uppercase all h2*/
+/*todo: check back mobile configs*/
+/*todo: refactor all code : generalize what can be (ex: form can be generalized then add margin and padding for mobile or desktop*/
+body {
+    background-color: #000000;
+    color: #0FB600;
+    font-family: Fira Code, monospace;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.yellow {
+    color: #DCEE07;
+}
+.red {
+    color: #B60B00;
+}
+.white {
+    color: #FFFFFF;
+}
+h1 {
+    letter-spacing: 2px;
+}
+.hidden {
+    display: none;
+}
+/*------------------------------------------------ MOBILE ------------------------------------------------*/
+@media screen and (max-width: 525px) {
+    /*------------------------------------------------*/
+    /*------------------ DARK THEME ------------------*/
+    /*------------------ LANDING PAGE ----------------*/
+    /*------------------------------------------------*/
+    .desktopOnly{
+        display: none;
+    }
+    section {
+        width: 55vmax;
+    }
+    .guideLanding, .welcomeTextDiv, .h2Slide, .formSign {
+        position: relative;
+        border: 1px dashed #0FB600;
+        border-radius: 5px;
+        text-align: center;
+        padding: 1%;
+        margin: 5%;
+        margin-left: 22vw;
+    }
+    ul {
+        list-style: none;
+        padding-left: 1%;
+    }
+    .network {
+        width: 90vw;
+        margin-left: 12vw;
+        padding-left: 8vw;
+    }
+    #copyright {
+        margin: 0 auto auto 43vw;
+    }
+    /*------------------------------------------------*/
+    /*---------------  ASIDE ELEMENTS  ---------------*/
+    /*------------------------------------------------*/
+    .navslideContent { /*!slide content needs to move WITH the slide on click (see js)*/
+        height: 100vh;
+        width: 90vw;
+    }
+    .formContainer {
+        margin-right: 15vw;
+        padding-top: 25%;
+        padding-bottom: 25%;
+    }
+    .separator {
+        display: block;
+        font-size: 5vmax;
+        text-align: center;
+    }
+    #submitSignUp, #submitSignIn { 
+        border: 1px solid #0FB600;
+        border-radius: 5px;
+        background-color: #000000;
+        color: #0FB600;
+        font-weight: 600;
+        padding: 2% 5% 2% 5%;
+        margin: 2% 5% 2% 21vw;
+    }
+    #submitSignUp:active, #submitSignIn:active {
+        background-color: #0FB600;
+        color: #000000;
+    }
+    #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck, #gameTitleSearch, #gameSearch { /*All and every input=text listed*/
+        color: #ffffff;
+        border: 1px dashed #0FB600;
+        border-radius: 5px;
+        background-color: #7c7c7c;
+        margin: 1vh;
+        width: 25vmax;
+        height: 3.5vmax;
+    }
+        #emailSignUp::placeholder, #passwordSignUp::placeholder, #emailSignIn::placeholder, #passwordSignIn::placeholder, #passwordCheck::placeholder,  #gameTitleSearch::placeholder, #gameSearch::placeholder{ /*All and every placeholders*/
+        color: #FFFFFF;
+        font-size: 2vmax;
+    }
+    .avatarSignContainer { /*todo: relocate containers (center) */
+        border: 1px solid #0FB600;
+        height: 6vmax;
+        width: 6vmax;
+        border-radius: 100%;
+    }
+    .avatarSign {
+        object-position: 50% 50%;
+        object-fit: fill;
+        height: 6vmax;
+        width: 6vmax;
+    }
+    /*-------------------------------------*/
+    /*-------- CLICKABLE SIDE BAR ---------*/
+    /*-------------------------------------*/
+    .clickBar {
+        position: fixed;
+        z-index: 100;
+        height: 110vh;
+        width: 8vw;
+        margin: 0;
+    }
+    .clickBar:active {
+        background-color: #0FB600;
+        color: #000000;
+        transition: all 1s ease-in-out;
+    }
+    .clickBarCheckbox {
+        width: 0;
+        height: 0;
+    }
+    /*--------------------------------------*/
+    /*--------- Button not clicked ---------*/
+    /*--------------------------------------*/
+    .hiddenLeft {
+        position: absolute;
+        left: -500px;
+    }
+    .left {
+        border-right: 2px solid #0FB600;
+        left: 0;
+        transition: translateX(91vw) ease-in-out 1s; /*! NOT SMOOTH WTF */
+    }
+    .fa-angles-right, .fa-angles-left {
+        margin-right: 10vw;
+        position: fixed;
+        top: 50%;
+    }
+    .visible {
+        position: absolute;
+        left: 0;
+    }
+    .right {
+        border-left: 2px solid #0FB600;
+        transform: translateX(91vw);
+        transition: translateX(91vw) 1s ease-in-out;
+    }
+    /*------------------------------------------------*/
+    /*------------------ DARK THEME ------------------*/
+    /*------------------ SEARCH PAGE -----------------*/
+    /*------------------------------------------------*/
+
+    /*------------------ SEARCH TOOLS ----------------*/
+    #gameTitleSearch{
+        margin-top: 3vmax;
+    }
+
+    #formSearch ul{
+        text-align: left;
+    }
+    #formSearch input[type="radio"]{
+        appearance: none;
+    }
+    #formSearch input[type="radio"] + label {
+        position: relative;
+        padding-left: 3vmax;
+    }
+    #formSearch input[type="radio"] + label::before {
+        display: block;
+        position: absolute;
+        box-sizing: border-box;
+        left: -1vmax;
+        bottom: 0.25vmax;
+        content: '';
+        width: 2.5vmax;
+        height: 2.5vmax;
+        border-radius: 100%;
+        border: 2px solid #DCEE07;
+        background-color: #000000;
+    }
+    #formSearch input[type="radio"]:checked + label::before {
+        background-color: #FFFFFF;
+        box-shadow: inset 0 0 0 0.25vmax #000000;
+    }
+
+    #formSearch input[type="checkbox"]{
+        appearance: none;
+    }
+    #formSearch input[type="checkbox"] + label{
+        position: relative;
+        padding-left: 3vmax;
+    }
+    #formSearch input[type="checkbox"] + label::before{
+            display: block;
+            position: absolute;
+            box-sizing: border-box;
+            left: -1vmax;
+            bottom: 0.25vmax;
+            content: '';
+            width: 2.5vmax;
+            height: 2.5vmax;
+            border: 2px solid #DCEE07;
+            background-color: #000000;
+    }
+    #formSearch input[type="checkbox"]:checked + label::before {
+        background-color: #FFFFFF;
+        box-shadow: inset 0 0 0 0.25vmax #000000;
+    }
+
+    #formSearch button{
+        background-color: #000000;
+        border: 1px dashed #0FB600;
+        border-radius:5px;
+        color: #0FB600;
+        letter-spacing: 1px;
+        padding: 0.5vmax 1vmax;
+        margin: 1vmax 0vmax 3vmax 0vmax;
+    }
+    /*--------------- SEARCH RESULTS -----------------*/
+
+
+}

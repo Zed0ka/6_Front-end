@@ -1,6 +1,9 @@
 /*------------------------------------------------ GENERAL ------------------------------------------------*/
+/*todo: switch all px to vmin or vmax including borders and font-sizes*/
+/*todo: text-transform uppercase all h2*/
+/*todo: check back mobile configs*/
+/*todo: refactor all code : generalize what can be (ex: form can be generalized then add margin and padding for mobile or desktop*/
 body {
-    background-color: #000000;
     color: #0FB600;
     font-family: Fira Code, monospace;
     letter-spacing: 1px;
@@ -21,140 +24,8 @@ h1 {
 .hidden {
     display: none;
 }
-/*------------------------------------------------ MOBILE ------------------------------------------------*/
-@media screen and (max-width: 525px) {
-    /*------------------------------------------------*/
-    /*------------------ DARK THEME ------------------*/
-    /*------------------ LANDING PAGE ----------------*/
-    /*------------------------------------------------*/
-    .desktopOnly{
-        display: none;
-    }
-    .landingPage {
-        width: 90vw;
-    }
-    .guideLanding, .welcomeTextDiv, .h2Slide, .formSign {
-        position: relative;
-        border: 1px dashed #0FB600;
-        border-radius: 5px;
-        text-align: center;
-        padding: 1%;
-        margin: 5%;
-        margin-left: 22vw;
-    }
-    ul {
-        list-style: none;
-        padding-left: 1%;
-    }
-    .network {
-        width: 90vw;
-        margin-left: 12vw;
-        padding-left: 8vw;
-    }
-    #copyright {
-        margin: 0 auto auto 43vw;
-    }
-    /*------------------------------------------------*/
-    /*-----------------  ASIDE PAGE  -----------------*/
-    /*------------------------------------------------*/
-    .navslideContent { /*animation slide content à déclencher au click (classtoggle) AVEC le slider*/
-        height: 100vh;
-        width: 90vw;
-    }
-    .formContainer {
-        margin-right: 15vw;
-        padding-top: 25%;
-        padding-bottom: 25%;
-    }
-    .separator {
-        display: inline-block;
-        font-size: 2em;
-      margin: 2% 5% 2% 33vw;
-    }
-    #submitSignUp, #submitSignIn {
-        border: 1px solid #0FB600;
-        border-radius: 5px;
-        background-color: #000000;
-        color: #0FB600;
-        font-weight: 600;
-        padding: 2% 5% 2% 5%;
-        margin: 2% 5% 2% 21vw;
-    }
-    #submitSignUp:active, #submitSignIn:active {
-        background-color: #0FB600;
-        color: #000000;
-    }
-    #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck {
-        color: #ffffff;
-        border: 1px dashed #0FB600;
-        border-radius: 5px;
-        background-color: #7c7c7c;
-        margin: 1vh;
-        width: 90%;
-    }
-    .avatarSignContainer {
-        border: 1px solid #0FB600;
-        height: 6vmax;
-        width: 6vmax;
-        border-radius: 100%;
-    }
-    .avatarSign {
-        object-position: 50% 50%;
-        object-fit: fill;
-        height: 6vmax;
-        width: 6vmax;
-    }
-    /*-------------------------------------*/
-    /*------------ SIDE BAR ---------------*/
-    /*-------------------------------------*/
-    .clickBar {
-        position: fixed;
-        z-index: 1;
-        height: 110vh;
-        width: 8vw;
-        margin: 0;
-    }
-    .clickBar:active {
-        background-color: #0FB600;
-        color: #000000;
-        transition: all 1s ease-in-out;
-    }
-    .clickBarCheckbox {
-        width: 0;
-        height: 0;
-    }
-    /*--------------------------------------*/
-    /*--------- Button not clicked ---------*/
-    /*--------------------------------------*/
-    .hiddenLeft {
-        position: absolute;
-        left: -500px;
-    }
-    .left {
-        border-right: 2px solid #0FB600;
-        left: 0;
-        transition: ease-in-out 1s; /*! check it */
-    }
-    .fa-angles-right {
-        margin-right: 10vw;
-        position: fixed;
-        top: 50%;
-    }
-    .visible {
-        position: absolute;
-        left: 0;
-    }
-    .right {
-        border-left: 2px solid #0FB600;
-        transform: translateX(91vw);
-        transition: translateX(91vw) 1s ease-out;
-    }
-    .fa-angles-left {
-        margin-right: 10vw;
-        position: fixed;
-        top: 50%;
-        transition: rotate(180deg) 0.5s ease-out;
-    }
+.popupBackground {
+    background-color: #000000;
 }
 /*------------------------------------------------ DESKTOP ------------------------------------------------*/
 @media screen and (min-width: 526px) {
@@ -164,7 +35,7 @@ h1 {
     /*------------------------------------------------*/
     /*-------------  LANDING PAGE GRID  --------------*/
     /*------------------------------------------------*/
-    section {
+    .popupBackground>section {
         display: grid;
         grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
         grid-template-areas: 
@@ -207,7 +78,7 @@ h1 {
         top: 5%;
         margin: 0 auto;
     }
-    /*-------------  landing page guides  --------------*/
+    /*-------------  landing page guides  --------------*/ /*todo: Rename all "guides" to "content" ? To be used for all pages?*/
     .guidesContainer {
         grid-area: main;
         justify-self: left;
@@ -281,17 +152,15 @@ h1 {
         text-align: center;
     }
     /*-------------  SignUp && SignIn popups --------------*/
-    .deactivated { /*deactivated class for the mobile navslide*/
-        display: none;
-    }
     .hideSignUp, .hideSignIn { /*hidden classes for the signin and signup elements*/
         display: none;
     }
-    .popupBackground {  /*!opacity affects all the page, why ?*/
-        background-position: top;
+    .deactivated { /*deactivated class for the mobile navslide*/
+        display: none;
+    }
+    .popupOn {
+        opacity: 0.3;
         z-index: 100;
-/*         opacity: 0.2; */
-        background-color: #0000FF;
         transition: ease-in-out 1s;
     }
     .showSignUp, .showSignIn {
@@ -302,6 +171,7 @@ h1 {
         left: 40vw;
         background-color: #000000;
         border: 2px dashed #0FB600;
+        border-radius: 15px;
         transition: ease-in-out 1s;
         display: flex;
         flex-flow: column nowrap;
@@ -316,6 +186,7 @@ h1 {
         padding: 0.5vh;
         font-size: 1.25vmax;
         margin-bottom: 0.5vmax;
+        text-transform: uppercase;
     }
     .formSign {
         display: flex;
@@ -343,15 +214,19 @@ h1 {
         width: 3vmax;
     }
     #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck {
-        border: 1px dashed #0FB600;
+        border: 1px solid #0FB600;
         border-radius: 5px;
         background-color: #7c7c7c;
         color: #ffffff;
         margin: 0.5vmax;
-        width: 10vmin;
+        width: 15vmin;
+    }
+    #emailSignUp::placeholder, #passwordSignUp::placeholder, #emailSignIn::placeholder, #passwordSignIn::placeholder, #passwordCheck::placeholder{
+        color: #FFFFFF;
+        font-size: 1.25vmin;
     }
     #submitSignUp, #submitSignIn {
-        border: 1px solid #0FB600;
+        border: 0.25vmin solid #0FB600;
         border-radius: 10px;
         background-color: #000000;
         color: #0FB600;

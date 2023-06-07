@@ -1,4 +1,8 @@
 /*------------------------------------------------ GENERAL ------------------------------------------------*/
+/*todo: switch all px to vmin or vmax including borders and font-sizes*/
+/*todo: text-transform uppercase all h2*/
+/*todo: check back mobile configs*/
+/*todo: refactor all code : generalize what can be (ex: form can be generalized then add margin and padding for mobile or desktop*/
 body {
     background-color: #000000;
     color: #0FB600;
@@ -55,7 +59,7 @@ h1 {
         margin: 0 auto auto 43vw;
     }
     /*------------------------------------------------*/
-    /*-----------------  ASIDE PAGE  -----------------*/
+    /*---------------  ASIDE ELEMENTS  ---------------*/
     /*------------------------------------------------*/
     .navslideContent { /*animation slide content à déclencher au click (classtoggle) AVEC le slider*/
         height: 100vh;
@@ -71,7 +75,7 @@ h1 {
         font-size: 2em;
         margin: 2% 5% 2% 33vw;
     }
-    #submitSignUp, #submitSignIn {
+    #submitSignUp, #submitSignIn { 
         border: 1px solid #0FB600;
         border-radius: 5px;
         background-color: #000000;
@@ -84,15 +88,15 @@ h1 {
         background-color: #0FB600;
         color: #000000;
     }
-    #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck {
+    #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck { /*todo: colorer les placeholders*/
         color: #ffffff;
         border: 1px dashed #0FB600;
         border-radius: 5px;
         background-color: #7c7c7c;
         margin: 1vh;
-        width: 90%;
+        width: 15vmin;
     }
-    .avatarSignContainer {
+    .avatarSignContainer { /*todo: relocate containers (center) */
         border: 1px solid #0FB600;
         height: 6vmax;
         width: 6vmax;
@@ -105,7 +109,7 @@ h1 {
         width: 6vmax;
     }
     /*-------------------------------------*/
-    /*------------ SIDE BAR ---------------*/
+    /*-------- CLICKABLE SIDE BAR ---------*/
     /*-------------------------------------*/
     .clickBar {
         position: fixed;
@@ -155,6 +159,15 @@ h1 {
         top: 50%;
         transition: rotate(180deg) 0.5s ease-out;
     }
+    /*------------------------------------------------*/
+    /*------------------ DARK THEME ------------------*/
+    /*------------------ LANDING PAGE ----------------*/
+    /*------------------------------------------------*/
+
+
+    /*-------------------------------------*/
+    /*-------- CLICKABLE SIDE BAR ---------*/
+    /*-------------------------------------*/
 }
 /*------------------------------------------------ DESKTOP ------------------------------------------------*/
 @media screen and (min-width: 526px) {
@@ -281,18 +294,21 @@ h1 {
         text-align: center;
     }
     /*-------------  SignUp && SignIn popups --------------*/
-    .deactivated { /*deactivated class for the mobile navslide*/
-        display: none;
-    }
     .hideSignUp, .hideSignIn { /*hidden classes for the signin and signup elements*/
         display: none;
     }
-    .popupBackground {  /*!opacity affects all the page, why ?*/
+    .deactivated { /*deactivated class for the mobile navslide*/
+        display: none;
+    }
+    .popupBackground {  /*!opacity affects the whole page, why ? => affects the div and its content, gotta separate the popup (done)*/
         background-position: top;
         z-index: 100;
-/*         opacity: 0.2; */
-        background-color: #0000FF;
+        opacity: 0.3;
+        background-color: #7c7c7c;
         transition: ease-in-out 1s;
+    }
+    .noPopup {
+        background-color: #000000;
     }
     .showSignUp, .showSignIn {
         position: fixed;
@@ -302,6 +318,7 @@ h1 {
         left: 40vw;
         background-color: #000000;
         border: 2px dashed #0FB600;
+        border-radius: 15px;
         transition: ease-in-out 1s;
         display: flex;
         flex-flow: column nowrap;
@@ -316,6 +333,7 @@ h1 {
         padding: 0.5vh;
         font-size: 1.25vmax;
         margin-bottom: 0.5vmax;
+        text-transform: uppercase;
     }
     .formSign {
         display: flex;
@@ -343,15 +361,19 @@ h1 {
         width: 3vmax;
     }
     #emailSignUp, #passwordSignUp, #emailSignIn, #passwordSignIn, #passwordCheck {
-        border: 1px dashed #0FB600;
+        border: 1px solid #0FB600;
         border-radius: 5px;
         background-color: #7c7c7c;
         color: #ffffff;
         margin: 0.5vmax;
-        width: 10vmin;
+        width: 15vmin;
+    }
+    #emailSignUp::placeholder, #passwordSignUp::placeholder, #emailSignIn::placeholder, #passwordSignIn::placeholder, #passwordCheck::placeholder{
+        color: #FFFFFF;
+        font-size: 1.25vmin;
     }
     #submitSignUp, #submitSignIn {
-        border: 1px solid #0FB600;
+        border: 0.25vmin solid #0FB600;
         border-radius: 10px;
         background-color: #000000;
         color: #0FB600;
