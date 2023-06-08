@@ -86,11 +86,11 @@ h1 {
         flex-flow: row wrap;
         justify-content: center;
         max-width: 65vw;
+        text-align: center;
     }
     .guideLanding {
         border: 1px dashed #0FB600;
         border-radius: 5px;
-        text-align: center;
         padding: 3%;
         width: 30vw;
         margin: 1vh 2vw;
@@ -99,6 +99,7 @@ h1 {
     }
     .guideLanding ul {
         list-style: none;
+        padding-left: 0;
     }
     /*-------------  side nav buttons  --------------*/
     .buttonsAside{

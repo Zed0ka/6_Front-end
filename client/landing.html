@@ -9,149 +9,170 @@
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- utilisation de google font -->
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet"> <!-- ajout de la police VT323 Fira Code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"> <!-- font awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <!-- ajout de la police VT323 Fira Code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"> <!-- font awesome -->
     <title>Partnerds - Organisez vos parties</title>
 </head>
+
 <body>
-    <!----------------- TRUE LANDING PAGE ----------------->
-<div class="popupBackground"><!-- scripting : add PopupOn when popup is on -->
-    <section class="landingPage visible"> 
-        <div class="welcomeTextDiv">
-            <h1> Bienvenue sur Partnerds </h1>
-        </div>
-        <div class="desktopOnly titleLine"></div>
-        <h1 class="desktopOnly decoTitle"> <center>partnerds</center></h1>
-        <main class="guidesContainer">
-            <article id="guideLanding1" class="guideLanding">
-                <h2>
-                    <--- ICI --- 
-                </h2>
-                        <p>
-                            se trouve la possibilité de <span class="yellow">faciliter l'organisation</span> de vos futures
-                            parties entre amies et amies.
-                        </p>
-                        <p>
-                            Chaque membre peut créer un <span class="yellow">planning personnel hebdomadaire</span>, choisir
-                            un jeu et laisser sa disponibilité à la vue de ses ami.es, <span class="red">ou</span> de tous
-                            et toutes.
-                        </p>
-            </article>
-            <article id="guideLanding2" class="guideLanding">
-                <ul>
-                    <li>
-                        <p>
-                            Chacun et chacune aura la possibilité de <span class="yellow">contacter</span> et de proposer de
-                            <span>rejoindre une session</span> selon les conditions établies par l'organisateur.ice.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, placeat omnis! Suscipit id reiciendis repudiandae atque facere modi dolor, pariatur, alias delectus nihil ut aut facilis eius a, voluptatem repellendus.
-                        </p>
-                    </li>
-                </ul>
-            </article>
-            <article id="guideLanding3" class="guideLanding">
-                <p>
-                    L'espace de membre contient :
-                </p>
-                <ul>
-                    <li><p>Un planning simple d'utilisation</p></li>
-                    <li><p>Une liste d'ami.es pour ne pas perdre vos partnerds</p></li>
-                    <li><p>Un moteur de recherche paramétrables par <span class="yellow">jeux</span>, <span class="yellow">type de joueurs</span> ou <span class="yellow">visibilité</span>.</p></li> A bientôt !
-                </ul>
-            </article>
-        </main>
-        <nav class="buttonsAside desktopOnly">
-            <ul>
-                <li><a href="">s'inscrire</a></li>
-                <li><a href="">se connecter</a></li>
-                <li>reseaux 
-                    <div class="desktopOnly">
-                        <a href="#"><img src="./assets/img/🦆 icon _instagram_.png" alt="Aller sur l'instagram du créateur"></a>
-                        <a href="#"><img src="./assets/img/🦆 icon _twitter_.png" alt="Aller sur le twitter du créateur"></a>
-                        <a href="#"><img src="./assets/img/🦆 icon _money alt_.png" alt="Faire un don"></a>
-                    </div> 
-                </li>
-            </ul>
-        </nav>
-        <footer class="desktopFooter desktopOnly">
-            <div class="countersDiv">
-                <div class="counter totalSignedInMembers">
-                    <h3>
-                        Membres inscrits
-                    </h3>
-                    <p>
-                        ----
-                    </p>
-                </div>
-                <div class="counter totalConnexions">
-                    <h3>
-                        Connexions Totales
-                    </h3>
-                    <p>
-                        ----
-                    </p>
-                </div>
-                <div class="counter totalGames">
-                    <h3>Parties Organisées</h3>
-                    <p>
-                        ----
-                    </p>
-                </div>
-            </div>
-        </footer>
-        <footer class="network mobileOnly">
-            <a href="#"><img src="./assets/img/🦆 icon _instagram_.png" alt="Aller sur l'instagram du créateur"></a>
-            <a href="#"><img src="./assets/img/🦆 icon _twitter_.png" alt="Aller sur le twitter du créateur"></a>
-            <a href="#"><img src="./assets/img/🦆 icon _money alt_.png" alt="Faire un don"></a>
-        </footer>
-        <p id="copyright">©Zedoka</p> <!-- actualiser date avec script js -->
-    </section>
-</div>
     <!----------------- MOBILE SLIDE PAGE - CONNEXION & ENREGISTREMENT ----------------->
     <!----------------- MOBILE BOUTON SLIDER ----------------->
-<aside class="navslide hiddenLeft">
-    <div class="clickBar left flashing mobileOnly">
-        <input type="checkbox" class="clickBarCheckbox" aria-label="Access the connexion and registration forms">
-        <i class="arrowIcon fa-solid fa-angles-right"></i>
-    </div>
-    <!----------------- CONTENU DE SLIDE ----------------->
-    <div class="navslideContent deactivated"> <!--! scripting : deactivated class-->
-        <div class="formContainer hideSignIn"> <!--! toggle : showSignIn class-->
-            <h2 class="h2Slide">
-                Connexion
-            </h2>
-            <form action="post" class="formSign" id="formSignIn">
-                <div class="avatarSignContainer">
-                    <img class="avatarSign" src="./assets/img/default_avatar.png" alt="Avatar par defaut">
-                </div>
-                <input type="email" name="emailSignIn" id="emailSignIn" placeholder="email">
-                <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
-                <button type="submit" id="submitSignIn" name="submitSignIn">Valider</button>
-            </form>
+    <aside class="navslide hiddenLeft">
+        <div class="clickBar left flashing mobileOnly">
+            <input type="checkbox" class="clickBarCheckbox" aria-label="Access the connexion and registration forms">
+            <i class="arrowIcon fa-solid fa-angles-right"></i>
         </div>
-        <p class="separator mobileOnly">
-            //////
-        </p>
-        <div class="formContainer hideSignUp"> <!--! toggle : showSignUp class-->
-            <h2 class="h2Slide">
-                Inscription
-            </h2>
-            <form action="post" class="formSign" id="formSignUp">
-                <div class="avatarSignContainer">
-                    <img class="avatarSign" src="./assets/img/default_avatar.png" alt="Avatar par defaut">
-                </div>
-                <input type="email" name="emailSignUp" id="emailSignUp" placeholder="email">
-                <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="mot_de_passe">
-                <input type="text" name="passwordCheck" id="passwordCheck" placeholder="confirmer_mot_de_passe">
-                <button type="submit" id="submitSignUp" name="submitSignUp">Valider</button>
-            </form>
+        <!----------------- CONTENU DE SLIDE ----------------->
+        <div class="navslideContent deactivated"> <!--! scripting : deactivated class-->
+            <div class="formContainer hideSignIn"> <!--! toggle : showSignIn class-->
+                <h2 class="h2Slide">
+                    Connexion
+                </h2>
+                <form action="post" class="formSign" id="formSignIn">
+                    <div class="avatarSignContainer">
+                        <img class="avatarSign" src="./assets/img/default_avatar.png" alt="Avatar par defaut">
+                    </div>
+                    <input type="email" name="emailSignIn" id="emailSignIn" placeholder="email">
+                    <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
+                    <button type="submit" id="submitSignIn" name="submitSignIn">Valider</button>
+                </form>
+            </div>
+            <p class="separator mobileOnly">
+                //////
+            </p>
+            <div class="formContainer hideSignUp"> <!--! toggle : showSignUp class-->
+                <h2 class="h2Slide">
+                    Inscription
+                </h2>
+                <form action="post" class="formSign" id="formSignUp">
+                    <div class="avatarSignContainer">
+                        <img class="avatarSign" src="./assets/img/default_avatar.png" alt="Avatar par defaut">
+                    </div>
+                    <input type="email" name="emailSignUp" id="emailSignUp" placeholder="email">
+                    <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="mot_de_passe">
+                    <input type="text" name="passwordCheck" id="passwordCheck" placeholder="confirmer_mot_de_passe">
+                    <button type="submit" id="submitSignUp" name="submitSignUp">Valider</button>
+                </form>
+            </div>
         </div>
+    </aside>
+    <!----------------- TRUE LANDING PAGE ----------------->
+    <div class="popupBackground"><!-- scripting : add PopupOn when popup is on -->
+        <section class="landingPage visible">
+            <div class="welcomeTextDiv">
+                <h1> Bienvenue sur Partnerds </h1>
+            </div>
+            <div class="desktopOnly titleLine"></div>
+            <h1 class="desktopOnly decoTitle">
+                <center>partnerds</center>
+            </h1>
+            <main class="guidesContainer">
+                <article id="guideLanding1" class="guideLanding">
+                    <h2>
+                        <--- ICI --- </h2>
+                            <p>
+                                se trouve la possibilité de <span class="yellow">faciliter l'organisation</span> de vos
+                                futures
+                                parties entre amies et amies.
+                            </p>
+                            <p>
+                                Chaque membre peut créer un <span class="yellow">planning personnel hebdomadaire</span>,
+                                choisir
+                                un jeu et laisser sa disponibilité à la vue de ses ami.es, <span class="red">ou</span>
+                                de tous
+                                et toutes.
+                            </p>
+                </article>
+                <article id="guideLanding2" class="guideLanding">
+                    <ul>
+                        <li>
+                            <p>
+                                Chacun et chacune aura la possibilité de <span class="yellow">contacter</span> et de
+                                proposer de
+                                <span>rejoindre une session</span> selon les conditions établies par l'organisateur.ice.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, placeat omnis! Suscipit
+                                id reiciendis repudiandae atque facere modi dolor, pariatur, alias delectus nihil ut aut
+                                facilis eius a, voluptatem repellendus.
+                            </p>
+                        </li>
+                    </ul>
+                </article>
+                <article id="guideLanding3" class="guideLanding">
+                    <p>
+                        L'espace de membre contient :
+                    </p>
+                    <ul>
+                        <li>
+                            <p>Un planning simple d'utilisation</p>
+                        </li>
+                        <li>
+                            <p>Une liste d'ami.es pour ne pas perdre vos partnerds</p>
+                        </li>
+                        <li>
+                            <p>Un moteur de recherche paramétrables par <span class="yellow">jeux</span>, <span
+                                    class="yellow">type de joueurs</span> ou <span class="yellow">visibilité</span>.</p>
+                        </li> A bientôt !
+                    </ul>
+                </article>
+            </main>
+            <nav class="buttonsAside desktopOnly">
+                <ul>
+                    <li><a href="">s'inscrire</a></li>
+                    <li><a href="">se connecter</a></li>
+                    <li>reseaux
+                        <div class="desktopOnly">
+                            <a href="#"><img src="./assets/img/🦆 icon _instagram_.png"
+                                    alt="Aller sur l'instagram du créateur"></a>
+                            <a href="#"><img src="./assets/img/🦆 icon _twitter_.png"
+                                    alt="Aller sur le twitter du créateur"></a>
+                            <a href="#"><img src="./assets/img/🦆 icon _money alt_.png" alt="Faire un don"></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <footer class="desktopFooter desktopOnly">
+                <div class="countersDiv">
+                    <div class="counter totalSignedInMembers">
+                        <h3>
+                            Membres inscrits
+                        </h3>
+                        <p>
+                            ----
+                        </p>
+                    </div>
+                    <div class="counter totalConnexions">
+                        <h3>
+                            Connexions Totales
+                        </h3>
+                        <p>
+                            ----
+                        </p>
+                    </div>
+                    <div class="counter totalGames">
+                        <h3>Parties Organisées</h3>
+                        <p>
+                            ----
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            <footer class="network mobileOnly">
+                <a href="#"><img src="./assets/img/🦆 icon _instagram_.png" alt="Aller sur l'instagram du créateur"></a>
+                <a href="#"><img src="./assets/img/🦆 icon _twitter_.png" alt="Aller sur le twitter du créateur"></a>
+                <a href="#"><img src="./assets/img/🦆 icon _money alt_.png" alt="Faire un don"></a>
+                <p id="copyright">©Zedoka</p>
+            </footer>
+        </section> <!-- actualiser date avec script js -->
     </div>
-</aside>
 </body>
+
 </html>
 <script src="./assets/frontScripts/slide.js"></script>
 <script src="/assets/frontScripts/copyrightUpdate.js"></script>
