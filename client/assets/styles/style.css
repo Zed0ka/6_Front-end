@@ -1,32 +1,9 @@
-/*------------------------------------------------ GENERAL ------------------------------------------------*/
+
 /*todo: switch all px to vmin or vmax including borders and font-sizes*/
 /*todo: text-transform uppercase all h2*/
 /*todo: check back mobile configs*/
 /*todo: refactor all code : generalize what can be (ex: form can be generalized then add margin and padding for mobile or desktop*/
-body {
-    color: #0FB600;
-    font-family: Fira Code, monospace;
-    letter-spacing: 1px;
-    margin: 0;
-}
-.yellow {
-    color: #DCEE07;
-}
-.red {
-    color: #B60B00;
-}
-.white {
-    color: #FFFFFF;
-}
-h1 {
-    letter-spacing: 2px;
-}
-.hidden {
-    display: none;
-}
-.popupBackground {
-    background-color: #000000;
-}
+
 /*------------------------------------------------ DESKTOP ------------------------------------------------*/
 @media screen and (min-width: 526px) {
     .mobileOnly{
@@ -227,7 +204,7 @@ h1 {
         font-size: 1.25vmin;
     }
     #submitSignUp, #submitSignIn {
-        border: 0.25vmin solid #0FB600;
+        border: 2px solid #0FB600;
         border-radius: 10px;
         background-color: #000000;
         color: #0FB600;

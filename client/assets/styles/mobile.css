@@ -1,9 +1,6 @@
 /*------------------------------------------------ GENERAL ------------------------------------------------*/
 /*todo: switch all px to vmin or vmax or vw or vh including borders and font-sizes*/
-/*todo: set up slider on TOP in html + slider content : left-1000px => left:0; overflow hidden; z-index: 100; width: tout l'écran */
 /*todo: text-transform uppercase all h2*/
-/*todo: switch all px to vmin or vmax including borders and font-sizes*/
-/*todo: set up slider on TOP in html + slider content : left-1000px => left:0; overflow hidden; z-index: 100; width: tout l'écran */
 body {
     background-color: #000000;
     color: #0FB600;
@@ -25,6 +22,9 @@ h1 {
 .hidden {
     display: none;
 }
+h2{
+    text-transform: uppercase;
+}
 /*------------------------------------------------ MOBILE ------------------------------------------------*/
 @media screen and (max-width: 525px) {
     /*------------------------------------------------*/
@@ -42,12 +42,22 @@ h1 {
     }
     .guideLanding, .welcomeTextDiv, .h2Slide, .formSign {
         position: relative;
+        box-sizing: border-box;
         border: 1px dashed #0FB600;
         border-radius: 5px;
         text-align: center;
         padding: 1%;
         margin: 5%;
+        width: 75vmin;
         left: 25vw;
+    }
+    .h1Search {
+        left: 25.5vw;
+        width: 76vmin;
+    }
+    .h1Result{
+        left: 26vw;
+        width: 71vmin;
     }
     ul {
         list-style: none;
@@ -83,14 +93,14 @@ h1 {
         width: 90vw;
         z-index: 110;
     }
-    #formSignIn, #formSignUp{
+    #formSignIn, #formSignUp, .cardsContainer{
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
         align-content: center;
     }
-    .formContainer {
-        margin-right: 15vw;
+    .formContainer, .cardsContainer{
+        margin-right: 18vw;
         padding-top: 25%;
         padding-bottom: 25%;
     }
@@ -140,12 +150,14 @@ h1 {
     /*-------------------------------------*/
     /*-------- CLICKABLE SIDE BAR ---------*/
     /*-------------------------------------*/
+
+    /*-------- Button before click --------*/
     .clickBar {
         position: fixed;
-        left: 15vmin;
+        left: 20vmin;
         top: 0;
         height: 100%;
-        width: 8vw;
+        width: 10vmin;
         margin: 0;
     }
     .clickBar:active {
@@ -157,17 +169,16 @@ h1 {
         width: 0;
         height: 0;
     }
-    .left {
+    .leftHome, .leftSearch {
         border-right: 2px solid #0FB600;
         left: 0;
         transition: all ease-in-out 1s;
     }
-    /*--------------------------------------*/
-    /*--------- Button clicked ---------*/
-    /*--------------------------------------*/
+    /*--------- Button after click ---------*/
     .hiddenLeft {
         position: fixed;
-        left: -100vh;
+        left: -80vh;
+        transition: all 1s ease-in-out;
     }
 
     .fa-angles-right, .fa-angles-left {
@@ -177,11 +188,15 @@ h1 {
     .visible {
         position: absolute;
         left: -10vmax;
-    }
-    .right {
-        border-left: 2px solid #0FB600;
-        transform: translateX(79vw);
         transition: all 1s ease-in-out;
+    }
+    .rightHome, .rightSearch {
+        border-left: 2px solid #0FB600;
+        transform: translateX(72vmin);
+        transition: all 1s ease-in-out;
+    }
+    .rightSearch {
+        transform: translateX(68vmin);
     }
     /*------------------------------------------------*/
     /*------------------ DARK THEME ------------------*/
@@ -256,7 +271,16 @@ h1 {
     }
     /*--------------- SEARCH RESULTS -----------------*/
     .cardsContainer{
-        
+        box-sizing: border-box;
+        position: relative;
+        background-color: #000000;
+        border: 1px dashed #0FB600;
+        border-radius:5px;
+        color: #0FB600;
+        z-index: 101;
+        margin-left: 30vmin;
+        margin-right: 30vmin;
+        width: 70vmin;
     }
-
+    
 }

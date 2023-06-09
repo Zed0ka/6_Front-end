@@ -16,46 +16,35 @@
 <body>
     <!----------------- SEARCH MENU ----------------->
     <aside class="navslide hiddenLeft">
-        <div class="clickBar left flashing mobileOnly">
+        <div class="clickBar clickBarSearch leftSearch flashing mobileOnly">
             <input type="checkbox" class="clickBarCheckbox" aria-label="Access the connexion and registration forms">
             <i class="arrowIcon fa-solid fa-angles-right"></i>
         </div>
         <!----------------- CONTENU DE SLIDE ----------------->
         <div class="navslideContent deactivated"> <!--! scripting : deactivated class-->
             <div class="formContainer hideSignIn"> <!--! toggle : showSignIn class-->
-                <h2 class="h2Slide">
-                    Connexion
+                <h2 class="h2Slide h1Result">
+                    Résultats de la recherche
                 </h2>
-                <form action="post" class="formSign" id="formSignIn">
-                    <div class="avatarSignContainer">
-                        <img class="avatarSign" src="./assets/img/default_avatar.png" alt="Avatar par defaut">
-                    </div>
-                    <input type="email" name="emailSignIn" id="emailSignIn" placeholder="email">
-                    <input type="password" name="passwordSignIn" id="passwordSignIn" placeholder="mot_de_passe">
-                    <button type="submit" id="submitSignIn" name="submitSignIn">Valider</button>
-                </form>
-            </div>
-            <p class="separator mobileOnly">
-                //////
-            </p>
-            <div class="formContainer hideSignUp"> <!--! toggle : showSignUp class-->
-                <h2 class="h2Slide">
-                    Inscription
-                </h2>
-                <form action="post" class="formSign" id="formSignUp">
-                    <div class="avatarSignContainer">
-                        <img class="avatarSign" src="./assets/img/default_avatar.png" alt="Avatar par defaut">
-                    </div>
-                    <input type="email" name="emailSignUp" id="emailSignUp" placeholder="email">
-                    <input type="password" name="passwordSignUp" id="passwordSignUp" placeholder="mot_de_passe">
-                    <input type="text" name="passwordCheck" id="passwordCheck" placeholder="confirmer_mot_de_passe">
-                    <button type="submit" id="submitSignUp" name="submitSignUp">Valider</button>
-                </form>
+                <section class="cardsContainer">
+                    <!-- game card structure for js DOM management -->
+                    <!-- 
+                        <article class="gameCard">
+                        <h3 class="gameCardTitle">Nom de la partie</h3>
+                        <p class="gameCardDate">date prévue de la partie</p>
+                        <p class="gameName">nom du jeu</p>
+                        <p class="gameType">Type de jeu (société ou vidéo)</p>
+                        <p class="gameDifficulty">Difficulté (débutant ou pro)</p>
+                        <p class="gameMultiplayerYN">Multijoueur ou non</p>
+                        <p class="gameFriendOrNo"> Ami ou non</p>
+                        </article>
+                    -->
+            </section>
             </div>
         </div>
     </aside>
     <section class="landingPage visible">
-        <div class="welcomeTextDiv">
+        <div class="welcomeTextDiv h1Search">
             <h1> Recherchez vos Parties </h1>
         </div>
         <div class="desktopOnly titleLine"></div>
@@ -116,29 +105,14 @@
                 </ul>
                 <button type="submit" placeholder="Rechercher" id="submitSearch" name="submitSearch">Rechercher</button>
             </form>
-            <section class="cardsContainer">
-                <!-- game card structure for js DOM management -->
-                <!-- 
-                    <article class="gameCard">
-                    <h3 class="gameCardTitle">Nom de la partie</h3>
-                    <p class="gameCardDate">date prévue de la partie</p>
-                    <p class="gameName">nom du jeu</p>
-                    <p class="gameType">Type de jeu (société ou vidéo)</p>
-                    <p class="gameDifficulty">Difficulté (débutant ou pro)</p>
-                    <p class="gameMultiplayerYN">Multijoueur ou non</p>
-                    <p class="gameFriendOrNo"> Ami ou non</p>
-                    </article>
-                -->
-            </section>
-        </section>
+            <p id="copyright">©Zedoka</p>
     </section>
     <!----------------- MOBILE SLIDE PAGE - NAVIGATION && SEARCH RESULTS ----------------->
     <!----------------- MOBILE BOUTON SLIDER ----------------->
-    <p id="copyright">©Zedoka</p>
 </body>
 
 </html>
-<script src="./assets/frontScripts/slide.js"></script>
-<script src="../backEnd/CRUDgames/Worker/workerGetGames.js"></script>
+<script src="./assets/frontScripts/search/slideSearch.js"></script>
+<script src="backEnd\CRUDgames\Worker\workerGetGames.js"></script>
 <script src="../backEnd/CRUDgames/API/getGames.js"></script>
 <script src="../backEnd/CRUDgames/API/getGame.js"></script>
