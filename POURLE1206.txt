@@ -1,0 +1,11 @@
+MCD MLD : Virer table "planning utilisateur"
+=> partie a déjà une date, suffit de la lier à un utilisateur [et right join parties et utilisateurs]
+=> une date pour une partie, plusieurs parties par date
+
+=> ORAL : nouveau png zoom : utilisateur, partie / role osef, API jeu osef (sera implémentée plus tard)
+
+Rappel : le worker est une fonctionnalité !!!!
+la présenter en plus.
+Explication brève à préparer :
+API pour alléger le chargement de la page
+-> fonctionne en asynchrone

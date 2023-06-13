@@ -1,6 +1,9 @@
-// Worker présentant les parties
-const getGames = new Worker("workerGetGames.js");
-//! on message / message ????
+const getGames = new Worker("../backEnd/CRUDgames/Worker/workerGetGames.js");
+getGames.onmessage = (event)=>{
+
+}
+
+// DOM : ajout de gameCard
 const displayGames = document.querySelector(".displayGames");
 
 // carte contenant les infos de jeu :
@@ -8,7 +11,7 @@ const gameCard = document.createElement ("div");
 gameCard.classList.add("gameCard");
 displayGames.appendChild(".gameCard");
 
-const gameCardTitle = document.createElement ("h4"); // titre de carte
+const gameCardTitle = document.createElement ("h3"); // titre de carte
 gameCardTitle.classList.add("gameCardTitle");
 gameCardTitle.innerText= `${partie[nom_partie]}`;
 gameCard.appendChild("gameCardTitle");
@@ -40,7 +43,7 @@ displayGameDetail.classList.add("displayGameDetail");
 displayGameDetail.innerText="Ouvrir"
 gameCard.appendChild(".displayGameDetail");
 
-const addPlanning = document.createElement("button"); // ajouter la partie au planning du user
+const addPlanning = document.createElement("button"); // bouton "ajouter la partie" au planning du user
 addPlanning.classList.add("addPlanning");
 addPlanning.innerText="Je rejoins!"
 gameCard.appendChild(".addPlanning");
