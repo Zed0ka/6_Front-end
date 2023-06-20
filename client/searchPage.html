@@ -50,7 +50,7 @@
         <div class="desktopOnly titleLine"></div>
         <h1 class="desktopOnly decoTitle">partnerds</h1>
         <section>
-            <form class="formSign" id="formSearch"> <!-- Game search form -->
+            <form class="formSign" id="formSearch" method="POST" action="$_SERVER['PHP_SELF']"> <!-- Game search form : UNSAFE -->
                 <input type="text" name="gameTitleSearch" id="gameTitleSearch" placeholder="Recherche par titre">
                 <input type="text" name="gameSearch" id="gameSearch" placeholder="Recherche par jeu">
                 <ul>
