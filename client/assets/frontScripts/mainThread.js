@@ -1,8 +1,3 @@
-const getGames = new Worker("../backEnd/CRUDgames/Worker/workerGetGames.js");
-getGames.onmessage = (event)=>{
-
-}
-
 // DOM : ajout de gameCard
 const displayGames = document.querySelector(".displayGames");
 

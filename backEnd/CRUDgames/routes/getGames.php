@@ -1,13 +1,13 @@
 <?php
 // path initiating a game search
 
-require_once './backEnd/utils/joinDB.php';
+require_once 'C:\Users\Cedric Drouille\Desktop\Papiers\WebDev\ADRAR\000_Répertoire_perso_ADRAR\3_Mon_Projet_Fil_Rouge\6_Front-end\backEnd\CRUDgames\routes\getGames.php';
 
-if(isset($_POST["submit"])) :
+if(isset($_GET["submit"])) :
     //if field isn't empty, i'm taking what's entered to send it to get fetch'd
     if(!empty($_GET["gameTitleSearch"]) || !empty($_GET["gameSearch"])) :
         //request to server 
-        //preparation:          
+        //preparation:
         $stmt = $rdb->prepare(" SELECT nom_partie as title, 
                                 jeu_partie as game, 
                                 date_partie as gameDate, 
@@ -43,5 +43,5 @@ if(isset($_POST["submit"])) :
         body($json_stmt);
     endif;
 endif;
-$rdb = null;
+$rdb = null; //cleaning variable
 ?>

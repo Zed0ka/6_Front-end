@@ -50,7 +50,7 @@
         <div class="desktopOnly titleLine"></div>
         <h1 class="desktopOnly decoTitle">partnerds</h1>
         <section>
-            <form class="formSign" id="formSearch" method="POST" action="$_SERVER['PHP_SELF']"> <!-- Game search form : UNSAFE -->
+            <form class="formSign" id="formSearch" method="GET" action="http://localhost/ADRAR/000_Répertoire_perso_ADRAR/3_Mon_Projet_Fil_Rouge/6_Front-end/backend/CRUDgames/routes/getGames.php"> <!-- Game search form : UNSAFE  -->
                 <input type="text" name="gameTitleSearch" id="gameTitleSearch" placeholder="Recherche par titre">
                 <input type="text" name="gameSearch" id="gameSearch" placeholder="Recherche par jeu">
                 <ul>
@@ -112,7 +112,7 @@
 </body>
 
 </html>
-<script src="./assets/frontScripts/search/slideSearch.js"></script>
 <script src="./assets/frontScripts/mainThread.js"></script>
-<script src="../backEnd/CRUDgames/API/getGames.js"></script>
-<script src="../backEnd/CRUDgames/API/getGame.js"></script>
+<script src="./assets/frontScripts/application/getGames.js"></script>
+<!-- <script src="../backEnd/CRUDgames/API/getGame.js"></script> -->
+<script src="./assets/frontScripts/search/slideSearch.js"></script>
