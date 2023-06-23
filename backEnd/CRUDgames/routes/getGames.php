@@ -1,47 +1,59 @@
 <?php
 // path initiating a game search
 
-require_once 'C:\Users\Cedric Drouille\Desktop\Papiers\WebDev\ADRAR\000_Répertoire_perso_ADRAR\3_Mon_Projet_Fil_Rouge\6_Front-end\backEnd\CRUDgames\routes\getGames.php';
+require_once( __DIR__.'/../../utils/joinDB.php');
 
-if(isset($_GET["submit"])) :
+function cleanText($txt) {
+    return htmlentities(strip_tags(stripslashes(trim($txt))));
+}
+
+if(isset($_POST["submitSearch"])) { //send the form via submit button : takes every field and create a variable for each field, with its name. Not just a "press the button" thingy
     //if field isn't empty, i'm taking what's entered to send it to get fetch'd
-    if(!empty($_GET["gameTitleSearch"]) || !empty($_GET["gameSearch"])) :
+    //* text inputs empty : send every stored games in rdb
+    $gameTitleSearch = (!isset($_POST["gameTitleSearch"]) || empty($_POST["gameTitleSearch"])) ? "%" : '%'.cleanText($_POST["gameTitleSearch"]);
+    $gameSearch = (!isset($_POST["gameSearch"]) || empty($_POST["gameSearch"])) ? "%" : '%'.cleanText($_POST["gameSearch"]);
+    $multiplayerOnly = (!isset($_POST["multiplayerOnly"])) ? 0 : (($_POST['multiplayerOnly'] == "on") ? 1 : 0);
+    $alreadyFull = (!isset($_POST["alreadyFull"])) ? 0 : (($_POST['alreadyFull'] == "on") ? 1 : 0);
+    $friendsOnly = (!isset($_POST["friendsOnly"])) ? 0 : (($_POST['friendsOnly'] == "on") ? 1 : 0);
+    $difficulty = 0;
+    $gameType = 0;
+
         //request to server 
-        //preparation:
-        $stmt = $rdb->prepare(" SELECT nom_partie as title, 
-                                jeu_partie as game, 
-                                date_partie as gameDate, 
-                                infos_supp_partie as infos, 
-                                type_jeu_partie as gameType, 
-                                difficulté_partie as difficulty, 
-                                is_multijoueur_partie as isMulti, 
-                                is_pleine_partie as isFull 
-                                FROM parties
-                                WHERE title 
-                                LIKE % :gameTitleSearch %       
-                                AND game LIKE % :gameSearch % 
-                                AND gameType = :gameTypeSearch 
-                                AND difficulty = :difficultySearch 
-                                AND isMulti = :isMultiplayerSearch 
-                                AND isFull = :isFullSearch; 
-                                SELECT pseudo_utilisateur as makerName 
-                                FROM utilisateurs
-                                WHERE parties(fk_utilisateur) = utilisateurs(id_utilisateur)");
-        //execution:
-        $stmt->bindParam(":gameTitleSearch",$_GET["gameTitleSearch"]);
-        $stmt->bindParam(":gameSearch",$_GET["gameSearch"]);
-        $stmt->bindParam(":gameTypeSearch",$_GET["gameType"]);
-        $stmt->bindParam(":difficultySearch",$_GET["difficulty"]);
-        $stmt->bindParam(":isMultiplayerSearch",$_GET["multiplayerOnly"]);
-        $stmt->bindParam(":isFullSearch",$_GET["alreadyFull"]);
-        $stmt->bindParam(":isFriendMadeSearch",$_GET["friendsOnly"]);
-        $rdb->execute();
-        $stmtFetch = $rdb->fetchAll();
-        $json_stmt = json_encode($stmtFetch);
-        header("HTTP/1.1 200 Success");
-        header("content-type:application/json; charset=utf-8");
-        body($json_stmt);
-    endif;
-endif;
+    try { // creation of a prepared request which links the informations
+        $stmt = $rdb->prepare("SELECT nom_partie as title, jeu_partie as game, date_partie as gameDate, infos_supp_partie as infos, type_jeu_partie as gameType, difficulte_partie as difficulty, is_multijoueur_partie as isMulti, is_pleine_partie as isFull, utilisateurs.pseudo_utilisateur as username FROM parties INNER JOIN utilisateurs ON fk_utilisateur = id_utilisateur WHERE nom_partie LIKE :gameTitleSearch AND jeu_partie LIKE :gameSearch AND type_jeu_partie = :gameTypeSearch AND difficulte_partie = :difficultySearch AND is_multijoueur_partie = :isMultiplayerSearch AND is_pleine_partie = :isFullSearch AND is_ami_creee = :isFriendMadeSearch;");
+    //execution:
+    $stmt->bindParam(":gameTitleSearch",$gameTitleSearch);
+    $stmt->bindParam(":gameSearch",$gameSearch);
+    $stmt->bindParam(":gameTypeSearch",$gameType);
+    $stmt->bindParam(":difficultySearch",$difficulty);
+    $stmt->bindParam(":isMultiplayerSearch",$multiplayerOnly);
+    $stmt->bindParam(":isFullSearch",$alreadyFull);
+    $stmt->bindParam(":isFriendMadeSearch",$friendsOnly);
+    $stmt->execute();
+    $stmtFetch = $stmt->fetchAll(); //récupère TOUS les enr sous forme tableau
+    } catch (Exception $e) {
+        $error = [
+        "code" => 500,
+        "message" => "Erreur Serveur".$e->getMessage()
+        ];
+    }
+} else {
+    $error = [
+        "code" => 400,
+        "message" => "Remplir le formulaire svp"
+        ];
+}
+
+header("Content-Type:application/json; charset=utf-8");
+header("Access-Control-Allow-Origin: *");
+
+if (isset($error)) {
+    http_response_code($error["code"]);
+    echo json_encode($error);
+} else { //if no error generated : proceed with encoding
+    http_response_code(200);
+    echo json_encode($stmtFetch);
+}
+
 $rdb = null; //cleaning variable
 ?>

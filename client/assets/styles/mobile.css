@@ -25,6 +25,12 @@ h1 {
 h2{
     text-transform: uppercase;
 }
+.error { /*error text hidden*/
+    display: none;
+}
+.error.active { /*error text showing*/
+display: block;
+}
 /*------------------------------------------------ MOBILE ------------------------------------------------*/
 @media screen and (max-width: 525px) {
     /*------------------------------------------------*/
